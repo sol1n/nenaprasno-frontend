@@ -1,0 +1,272 @@
+.form-app-100 {
+
+}
+
+.form-app-title {
+    display: none;
+    text-align: center;
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    margin-top: 60px;
+}
+
+@media (max-width: 720px) {
+    .form-app-title {
+        font-size: 28px;
+        margin-top: 30px;
+    }
+}
+
+.form-part-title {
+    display: none;
+}
+
+.form-breadcrumbs-item {
+    display: none;
+}
+
+.form-breadcrumbs-item.breadcrumbs,
+.form-breadcrumbs-item-results {
+    display: block;
+}
+
+.form-app-current-0 .form-app-title {
+    display: block;
+}
+
+.form-app-current-1 {
+    padding-top: 50px;
+    transition: padding 300ms;
+}
+
+.form-app-current-0 .form-breadcrumbs,
+.form-app-current-1 .form-breadcrumbs {
+     display: none;
+}
+
+.form-part-0 .form-part-title {
+    display: block;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 30px;
+    color: #454545;
+}
+
+.form-part-0 .form-section-0 .form-section-title {
+    display: none;
+}
+
+/*.form-part-0 .form-part-buttons {
+    display: none;
+}*/
+
+.form-part-0 .form-section-0 .form-group-0 .form-control-radiobuttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-part-0 .form-section-0 .form-group-0 .form-control-radiobuttons .form-control-title {
+    display: none;
+}
+
+.form-part-0 .form-section-0 .form-group-0 .form-control-radiobuttons .form-control-label {
+    position: relative;
+    display: block;
+    width: 270px;
+    text-align: center;
+    padding: 20px 20px 100px;
+    background-color: #fff;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.form-part-0 .form-section-0 .form-group-0 .form-control-radiobuttons .form-control-input {
+    visibility: hidden;
+    position: absolute;
+}
+
+.form-control-t1-p1-s1-g1-c1 .form-control-radiobutton-item [type="radio"]:not(:checked) + label.form-control-label-0:after,
+.form-control-t1-p1-s1-g1-c1 .form-control-radiobutton-item [type="radio"]:checked + label.form-control-label-0:after {
+    content: '';
+    display: block;
+    position: relative;
+    margin: 20px auto 0;
+    background: url("../images/test-assets/man.png");
+    width: 200px;
+    height: 240px;
+    opacity: 1;
+    border-radius: 0;
+    transform: scale(1);
+}
+
+.form-control-t1-p1-s1-g1-c1 .form-control-radiobutton-item [type="radio"]:not(:checked) + label.form-control-label-1:after,
+.form-control-t1-p1-s1-g1-c1 .form-control-radiobutton-item [type="radio"]:checked + label.form-control-label-1:after {
+    content: '';
+    display: block;
+    position: relative;
+    margin: 20px auto 0;
+    background: url("../images/test-assets/woman.png");
+    width: 200px;
+    height: 240px;
+    opacity: 1;
+    border-radius: 0;
+    transform: scale(1);
+}
+
+.form-control-t1-p1-s1-g1-c1 .form-control-radiobutton-item [type="radio"]:not(:checked) + label:before,
+.form-control-t1-p1-s1-g1-c1 .form-control-radiobutton-item [type="radio"]:checked + label:before {
+    content: 'Выбрать';
+    display: inline-block;
+    position: absolute;
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 4px;
+    border: 2px solid #00ADF1;
+    font-size: 14px;
+    font-weight: bold;
+    color: #298DCF;
+}
+
+.form-control-t1-p1-s1-g1-c1 .form-control-radiobutton-item [type="radio"]:checked + label:before {
+    background-color: #00ADF1;
+    color: #fff;
+}
+
+.form-control-t1-p1-s1-g1-c1 .form-control-feedback {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: red;
+}
+
+.form-part {
+    counter-reset: section;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+.form-section-title {
+    position: relative;
+    font-size: 17px;
+    line-height: 28px;
+    margin-bottom: 20px;
+}
+
+.form-part:not(.form-part-0):not(.form-part-1) {
+    margin-left: 34px;
+}
+
+.form-part:not(.form-part-0):not(.form-part-1) .form-part-buttons {
+    margin-left: -34px;
+}
+
+.form-part:not(.form-part-0):not(.form-part-1) .form-section-title::before {
+    counter-increment: section;
+    content: counter(section);
+    position: absolute;
+    left: -34px;
+    top: 50%;
+    margin-top: -12px;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    line-height: 24px;
+    color: #fff;
+    text-align: center;
+    background-color: #00ADF1;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.form-part-1 .form-section-0 .form-control {
+    position: relative;
+    counter-increment: group;
+    margin-left: 34px;
+}
+
+.form-part-1 .form-section-0 .form-control::before {
+    content: counter(group);
+    position: absolute;
+    left: -34px;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    background-color: #dfe7ee;
+    line-height: 24px;
+    color: #000;
+    text-align: center;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.form-part-1 .form-section-0 .form-control.form-control-4,
+.form-part-1 .form-section-0 .form-control.form-control-5 {
+    margin-left: 50px;
+}
+
+.form-part-1 .form-section-0 .form-control.form-control-4::before,
+.form-part-1 .form-section-0 .form-control.form-control-5::before {
+    display: none;
+}
+
+.form-section-warning {
+    background: url("../images/test-assets/bg-warning.png") top right no-repeat;
+    padding-right: 400px;
+}
+
+@media (max-width: 720px) {
+    .form-section-warning {
+        padding-right: 0;
+        background-size: 100px 100px;
+        background-position: right top;
+    }
+}
+
+.form-part-1 .form-section-0 .form-section-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.form-part-1 .form-control-textblock {
+    margin-left: 15px;
+}
+
+/* Ваш регион */
+.form-part-2 .form-section-0 .form-control-combobox input {
+    width: 100%;
+}
+
+/* Возраст, рост, вес */
+.form-part-2 .form-section-1 .form-control-numberinput input {
+    width: 100%;
+}
+
+
+/* Курите ли вы? */
+.form-part-2 .form-section-5 .form-section-title {
+    flex-basis: 100%;
+}
+
+.form-part-2 .form-section-4 .form-group-1 {
+    flex: 1 1 0;
+}
+
+/* Breadcrumbs override */
+
+.form-breadcrumb-item-2 .form-breadcrumbs-item-value::before,
+.form-breadcrumb-item-5::before {
+    display: none;
+}

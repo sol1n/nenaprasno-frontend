@@ -1,0 +1,19 @@
+<div class="quotation-block">
+                        <div class="quotation-block-author">
+                            <div class="quotation-block-author-photo">
+                                <img class="img-responsive" src="images/tmp/staff-2.jpg" alt="Илья Фоминцев">
+                            </div>
+                            <div class="quotation-block-author-name">
+                                Илья Фоминцев,
+                            </div>
+                            <div class="quotation-block-author-title">
+                                исполнительный директор «Фонда профилактики рака»
+                            </div>
+                        </div>
+
+                        <div class="quotation-block-text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam asperiores cupiditate ea eveniet facilis fuga illum iusto labore, minus totam voluptatibus! Consectetur ex impedit labore tenetur! Earum est, placeat.
+                            </p>
+                        </div>
+                    </div>
