@@ -6,16 +6,15 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
         &copy; Фонд профилактики рака, <?php echo date("Y"); ?>
     </footer>
 
+    <script src="/assets/build/scripts.js"></script>
     <? if (CSite::InDir('/screen/')): ?>
-        <script src="/assets/scripts.js"></script>
         <script src="/assets/screen/build/app.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <link rel="stylesheet" href="/assets/screen/css/nenaprasno-form.css">
         <link rel="stylesheet" href="/assets/screen/css/nenaprasno-form-1.css">
     <? else: ?>
-        <script src="/assets/scripts.js"></script>
         <script async src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>
-        <script async src="/assets/payments.js?p=<?=time()?>"></script>
+        <script async src="/assets/js/payments.js?p=<?=time()?>"></script>
     <? endif ?>
 
     <!-- Yandex.Metrika counter -->
