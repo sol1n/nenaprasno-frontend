@@ -3,15 +3,15 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 ?>
     <footer class="main-footer">
-        &copy; Фонд профилактики рака, 2017
+        &copy; Фонд профилактики рака, <?php echo date("Y"); ?>
     </footer>
 
     <? if (CSite::InDir('/screen/')): ?>
         <script src="/assets/scripts.js"></script>
-        <script src="/assets/screen/app.js"></script>
+        <script src="/assets/screen/build/app.js"></script>
         <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <link rel="stylesheet" href="/assets/screen/nenaprasno-form.css">
-        <link rel="stylesheet" href="/assets/screen/nenaprasno-form-1.css">
+        <link rel="stylesheet" href="/assets/screen/css/nenaprasno-form.css">
+        <link rel="stylesheet" href="/assets/screen/css/nenaprasno-form-1.css">
     <? else: ?>
         <script src="/assets/scripts.js"></script>
         <script async src="https://widget.cloudpayments.ru/bundles/cloudpayments"></script>

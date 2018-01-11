@@ -56,11 +56,11 @@
 	
 	// Component
 	var formApp = __webpack_require__(36),
-	    formUserarea = __webpack_require__(140);
+	    formUserarea = __webpack_require__(146);
 	
 	// Store
-	var formStore = __webpack_require__(145),
-	    Cookies = __webpack_require__(146);
+	var formStore = __webpack_require__(151),
+	    Cookies = __webpack_require__(152);
 	
 	var app = new Vue({
 	    el: "#app",
@@ -13727,7 +13727,9 @@
 	        errorSendingFormResults: "Возникла ошибка при отправке результатов теста. Пожалуйста, попробуйте еще раз.",
 	        errorLogin: "Ошибка авторизации. Проверьте ваше имя пользователя и пароль."
 	    },
-	    userProfileName: "FundUser"
+	    userProfileName: "FundUser",
+	    APP_VK: '6307655',
+	    APP_FB: '2087951274768979'
 	};
 	
 	module.exports = config;
@@ -15170,7 +15172,7 @@
 	  /* script */
 	  __webpack_require__(43),
 	  /* template */
-	  __webpack_require__(139),
+	  __webpack_require__(145),
 	  /* scopeId */
 	  "data-v-cf31ea06",
 	  /* cssModules */
@@ -15231,7 +15233,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"form-app.vue","sourceRoot":""}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"form-app.vue","sourceRoot":""}]);
 	
 	// exports
 
@@ -15631,13 +15633,18 @@
 	//
 	//
 	//
+	//
+	//
+	//
+	//
 	
 	var formBreadcrumbs = __webpack_require__(44),
 	    formPart = __webpack_require__(49),
 	    formResult = __webpack_require__(115),
 	    formSubmitAuthModal = __webpack_require__(120),
-	    formAuthModal = __webpack_require__(129),
-	    formProfileModal = __webpack_require__(134),
+	    formAuthModal = __webpack_require__(132),
+	    formProfileModal = __webpack_require__(137),
+	    formSuccessModal = __webpack_require__(142),
 	    displayCondition = __webpack_require__(53);
 	
 	module.exports = {
@@ -15648,7 +15655,8 @@
 	        'form-result': formResult,
 	        'form-submit-auth-modal': formSubmitAuthModal,
 	        'form-auth-modal': formAuthModal,
-	        'form-profile-modal': formProfileModal
+	        'form-profile-modal': formProfileModal,
+	        'form-success-modal': formSuccessModal
 	    },
 	    computed: {
 	        current: function current() {
@@ -15662,6 +15670,9 @@
 	        },
 	        showProfileModal: function showProfileModal() {
 	            return this.$store.state.showProfileModal;
+	        },
+	        showSuccessModal: function showSuccessModal() {
+	            return this.$store.state.showSuccessModal;
 	        }
 	    },
 	    methods: {
@@ -15985,7 +15996,7 @@
 	            if (validate && pageValidation(this.part, this.$store) || validate == false) {
 	                this.$store.dispatch('changeStep', action);
 	                // Scrolling to top of next page
-	                this.$el.scrollIntoView(true);
+	                this.$root.$el.scrollIntoView(true);
 	            } else {
 	                console.log(this.part);
 	            }
@@ -15994,26 +16005,31 @@
 	            if (pageValidation(this.part, this.$store)) {
 	                var _this = this;
 	
-	                if (!_this.$store.state.user || _this.$store.state.user.isAnonymous) {
-	                    _this.$store.commit('setSubmitAuthModal', true);
-	                }
-	
 	                formSubmit(_this).then(function (response) {
 	                    alert(config.messages.successFormPost);
+	
+	                    if (!_this.$store.state.user || _this.$store.state.user.isAnonymous) {
+	                        _this.$store.commit('setSubmitAuthModal', true);
+	                    }
+	
 	                    _this.$store.commit('setFormResponse', response.data);
 	
 	                    // Go to form result page
 	                    _this.$store.dispatch('changeStep', 'next');
 	
 	                    if (!_this.$store.state.user.isAnonymous) {
-	                        _this.$store.state.form = {};
-	                        _this.$store.state.user = {};
-	                        _this.$store.state.userProfile = {};
-	                        window.sessionStorage.clear();
+	                        _this.$store.commit('setSuccessModal', true);
+	
+	                        setTimeout(function () {
+	                            _this.$store.state.form = {};
+	                            _this.$store.state.user = {};
+	                            _this.$store.state.userProfile = {};
+	                            window.sessionStorage.clear();
+	                        }, 2000);
 	
 	                        setTimeout(function () {
 	                            window.location.replace(config.cabinetURL);
-	                        }, 2000);
+	                        }, 5000);
 	                    }
 	                }).catch(function (error) {
 	                    alert(config.messages.errorSendingFormResults);
@@ -18990,7 +19006,7 @@
 	  /* script */
 	  __webpack_require__(123),
 	  /* template */
-	  __webpack_require__(128),
+	  __webpack_require__(131),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -19051,7 +19067,7 @@
 	
 	
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"form-submit-auth-modal.vue","sourceRoot":""}]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", "", {"version":3,"sources":[],"names":[],"mappings":"","file":"form-submit-auth-modal.vue","sourceRoot":""}]);
 	
 	// exports
 
@@ -19168,23 +19184,17 @@
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	
 	var config = __webpack_require__(10),
 	    axios = __webpack_require__(11),
 	    userModalLogin = __webpack_require__(124),
-	    userModalRegistration = __webpack_require__(127);
+	    userModalRegistration = __webpack_require__(127),
+	    SocialAuth = __webpack_require__(128);
 	
 	module.exports = {
+	    components: {
+	        'social-auth': SocialAuth
+	    },
 	    data: function data() {
 	        return {
 	            login: null,
@@ -19232,14 +19242,18 @@
 	                },
 	                withCredentials: true
 	            }).then(function () {
-	                _this3.$store.state.form = {};
-	                _this3.$store.state.user = {};
-	                _this3.$store.state.userProfile = {};
-	                window.sessionStorage.clear();
+	                _this3.$store.commit('setSuccessModal', true);
+	
+	                setTimeout(function () {
+	                    _this3.$store.state.form = {};
+	                    _this3.$store.state.user = {};
+	                    _this3.$store.state.userProfile = {};
+	                    window.sessionStorage.clear();
+	                }, 2000);
 	
 	                setTimeout(function () {
 	                    window.location.replace(config.cabinetURL);
-	                }, 2000);
+	                }, 5000);
 	            }).catch(function (e) {
 	                console.log(e);
 	            });
@@ -19557,6 +19571,213 @@
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
+	var Component = __webpack_require__(42)(
+	  /* script */
+	  __webpack_require__(129),
+	  /* template */
+	  __webpack_require__(130),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/social-auth.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] social-auth.vue: functional components are not supported with templates, they should use render functions.")}
+	
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-380bf8b3", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-380bf8b3", Component.options)
+	  }
+	})()}
+	
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 129 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	var config = __webpack_require__(10);
+	var axios = __webpack_require__(11);
+	
+	module.exports = {
+	    data: function data() {
+	        return {};
+	    },
+	
+	    computed: {
+	        token: function token() {
+	            return this.$store.state.user.refreshToken;
+	        }
+	    },
+	    methods: {
+	        placeScripts: function placeScripts() {
+	            function placeJS(d, s, id, src) {
+	                return new Promise(function (resolve, reject) {
+	                    var js = void 0,
+	                        fjs = d.getElementsByTagName(s)[0];
+	                    if (d.getElementById(id)) {
+	                        return;
+	                    }
+	                    js = d.createElement(s);js.id = id;
+	                    js.src = src;
+	                    js.onload = function () {
+	                        resolve();
+	                    };
+	                    fjs.parentNode.insertBefore(js, fjs);
+	                });
+	            }
+	
+	            var fb = placeJS(document, 'script', 'facebook-jssdk', 'https://connect.facebook.net/ru_ru/sdk.js');
+	            var vk = placeJS(document, 'script', 'vk-openapi', 'https://vk.com/js/api/openapi.js?151');
+	
+	            Promise.all([fb, vk]).then(function () {
+	                VK.init({
+	                    apiId: config.APP_VK
+	                });
+	
+	                FB.init({
+	                    appId: config.APP_FB,
+	                    cookie: true,
+	                    xfbml: true,
+	                    version: 'v2.11'
+	                });
+	
+	                FB.AppEvents.logPageView();
+	            });
+	        },
+	        handleSocial: function handleSocial(networkName, userId) {
+	            var url = config.cabinetURL + '/loginBySocial';
+	
+	            axios.post(url, {
+	                userId: userId,
+	                networkName: networkName,
+	                sessionId: this.$store.state.user.sessionId,
+	                refreshToken: this.$store.state.user.refreshToken
+	            }, {
+	                headers: {
+	                    "Content-Type": "application/json"
+	                },
+	                withCredentials: true
+	            }).then(function (res) {
+	                if (res.data && res.data.type === 'success') {
+	                    window.location.href = res.data.data;
+	                }
+	            }).catch(function (e) {
+	                alert("Ошибка авторизации");
+	                console.log(e);
+	            });
+	        },
+	        loginFb: function loginFb() {
+	            var _this = this;
+	
+	            FB.getLoginStatus(function (response) {
+	                console.log(response);
+	                if (response.authResponse) {
+	                    _this.handleSocial('fb', response.authResponse.userID);
+	                } else {
+	                    FB.login(function (response) {
+	                        if (response.authResponse) {
+	                            _this.handleSocial('fb', response.authResponse.userID);
+	                        } else {
+	                            console.log('Пользователь передумал логиниться через ФБ');
+	                        }
+	                    }, {
+	                        scope: 'email'
+	                    });
+	                }
+	            }, {
+	                scope: 'email,id'
+	            });
+	        },
+	        loginVk: function loginVk() {
+	            var _this2 = this;
+	
+	            VK.Auth.login(function (res) {
+	                if (res.status === "connected" && res.hasOwnProperty('session')) {
+	                    _this2.handleSocial('vk', res.session.user.id);
+	                }
+	            }, 4194304);
+	        }
+	    },
+	    created: function created() {
+	        this.placeScripts();
+	    }
+	};
+
+/***/ }),
+/* 130 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "social-auth"
+	  }, [_c('div', {
+	    staticClass: "social-auth-item"
+	  }, [_c('a', {
+	    staticClass: "social-auth-item-link social-auth-item-link-vk",
+	    attrs: {
+	      "href": "#"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $event.preventDefault();
+	        _vm.loginVk($event)
+	      }
+	    }
+	  }, [_vm._v("\n            Вконтакте\n        ")])]), _vm._v(" "), _c('div', {
+	    staticClass: "social-auth-item"
+	  }, [_c('a', {
+	    staticClass: "social-auth-item-link social-auth-item-link-fb",
+	    attrs: {
+	      "href": "#"
+	    },
+	    on: {
+	      "click": function($event) {
+	        $event.preventDefault();
+	        _vm.loginFb($event)
+	      }
+	    }
+	  }, [_vm._v("\n            Facebook\n        ")])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-380bf8b3", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 131 */
+/***/ (function(module, exports, __webpack_require__) {
+
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "modal-overlay"
@@ -19759,7 +19980,15 @@
 	        _vm.confirmCloseModal('Вы действительно не хотите отказаться от сохранения результатов теста на ваш Email?')
 	      }
 	    }
-	  }, [_vm._v("\n                            Продолжить без регистрации\n                        ")])])])]) : _vm._e()]), _vm._v(" "), _vm._m(1)])])
+	  }, [_vm._v("\n                            Продолжить без регистрации\n                        ")])])])]) : _vm._e()]), _vm._v(" "), _c('div', {
+	    staticClass: "form-auth-modal-footer"
+	  }, [_c('div', {
+	    staticClass: "form-auth-modal-padding"
+	  }, [_c('div', {
+	    staticClass: "form-auth-modal-socials"
+	  }, [_c('div', {
+	    staticClass: "form-auth-modal-socials-title"
+	  }, [_vm._v("\n                        Войти с помощью вашего аккаунта в соцсети\n                    ")]), _vm._v(" "), _c('social-auth')], 1)])])])])
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "form-auth-modal-control"
@@ -19769,35 +19998,6 @@
 	      "type": "submit"
 	    }
 	  }, [_vm._v("\n                            Зарегистрироваться\n                        ")])])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "form-auth-modal-footer",
-	    staticStyle: {
-	      "display": "none"
-	    }
-	  }, [_c('div', {
-	    staticClass: "form-auth-modal-padding"
-	  }, [_c('div', {
-	    staticClass: "form-auth-modal-socials"
-	  }, [_c('div', {
-	    staticClass: "form-auth-modal-socials-title"
-	  }, [_vm._v("\n                        Войти с помощью вашего аккаунта в соцсети\n                    ")]), _vm._v(" "), _c('div', {
-	    staticClass: "form-auth-modal-socials-row"
-	  }, [_c('div', {
-	    staticClass: "form-auth-modal-socials-cell"
-	  }, [_c('a', {
-	    staticClass: "form-auth-modal-socials-item form-auth-modal-socials-item-vk",
-	    attrs: {
-	      "href": "#"
-	    }
-	  }, [_vm._v("\n                                Вконтакте\n                            ")])]), _vm._v(" "), _c('div', {
-	    staticClass: "form-auth-modal-socials-cell"
-	  }, [_c('a', {
-	    staticClass: "form-auth-modal-socials-item form-auth-modal-socials-item-fb",
-	    attrs: {
-	      "href": "#"
-	    }
-	  }, [_vm._v("\n                                Facebook\n                            ")])])])])])])
 	}]}
 	module.exports.render._withStripped = true
 	if (false) {
@@ -19808,18 +20008,18 @@
 	}
 
 /***/ }),
-/* 129 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(130)
+	__webpack_require__(133)
 	
 	var Component = __webpack_require__(42)(
 	  /* script */
-	  __webpack_require__(132),
+	  __webpack_require__(135),
 	  /* template */
-	  __webpack_require__(133),
+	  __webpack_require__(136),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -19846,13 +20046,13 @@
 
 
 /***/ }),
-/* 130 */
+/* 133 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(131);
+	var content = __webpack_require__(134);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -19872,7 +20072,7 @@
 	}
 
 /***/ }),
-/* 131 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(39)();
@@ -19886,7 +20086,7 @@
 
 
 /***/ }),
-/* 132 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -19964,7 +20164,7 @@
 	};
 
 /***/ }),
-/* 133 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -20125,18 +20325,18 @@
 	}
 
 /***/ }),
-/* 134 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(135)
+	__webpack_require__(138)
 	
 	var Component = __webpack_require__(42)(
 	  /* script */
-	  __webpack_require__(137),
+	  __webpack_require__(140),
 	  /* template */
-	  __webpack_require__(138),
+	  __webpack_require__(141),
 	  /* scopeId */
 	  null,
 	  /* cssModules */
@@ -20163,13 +20363,13 @@
 
 
 /***/ }),
-/* 135 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(136);
+	var content = __webpack_require__(139);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -20189,7 +20389,7 @@
 	}
 
 /***/ }),
-/* 136 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(39)();
@@ -20203,7 +20403,7 @@
 
 
 /***/ }),
-/* 137 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20423,7 +20623,7 @@
 	};
 
 /***/ }),
-/* 138 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -20767,7 +20967,105 @@
 	}
 
 /***/ }),
-/* 139 */
+/* 142 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var Component = __webpack_require__(42)(
+	  /* script */
+	  __webpack_require__(143),
+	  /* template */
+	  __webpack_require__(144),
+	  /* scopeId */
+	  null,
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-success-modal.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] form-success-modal.vue: functional components are not supported with templates, they should use render functions.")}
+	
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-e0600982", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-e0600982", Component.options)
+	  }
+	})()}
+	
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	var config = __webpack_require__(10);
+	
+	module.exports = {
+	    data: function data() {
+	        return {
+	            config: config
+	        };
+	    }
+	};
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "modal-overlay"
+	  }, [_c('div', {
+	    staticClass: "form-success-modal"
+	  }, [_c('div', {
+	    staticClass: "form-success-modal-icon"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "form-success-modal-title"
+	  }, [_vm._v("\n            Спасибо\n        ")]), _vm._v(" "), _c('div', {
+	    staticClass: "form-success-modal-desc"
+	  }, [_vm._v("\n            Присоединяйтесь к проектам Фонда профилактики рака - нам нужна ваша поддержка!\n        ")]), _vm._v(" "), _c('a', {
+	    staticClass: "form-success-modal-submit",
+	    attrs: {
+	      "href": _vm.config.cabinetURL
+	    }
+	  }, [_vm._v("В личный кабинет")])])])
+	},staticRenderFns: []}
+	module.exports.render._withStripped = true
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-e0600982", module.exports)
+	  }
+	}
+
+/***/ }),
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -20804,6 +21102,10 @@
 	    attrs: {
 	      "name": "fade"
 	    }
+	  }, [(_vm.showSuccessModal) ? _c('form-success-modal') : _vm._e()], 1), _vm._v(" "), _c('transition', {
+	    attrs: {
+	      "name": "fade"
+	    }
 	  }, [(_vm.showAuthModal) ? _c('form-auth-modal') : _vm._e()], 1), _vm._v(" "), _c('transition', {
 	    attrs: {
 	      "name": "fade"
@@ -20819,18 +21121,18 @@
 	}
 
 /***/ }),
-/* 140 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(141)
+	__webpack_require__(147)
 	
 	var Component = __webpack_require__(42)(
 	  /* script */
-	  __webpack_require__(143),
+	  __webpack_require__(149),
 	  /* template */
-	  __webpack_require__(144),
+	  __webpack_require__(150),
 	  /* scopeId */
 	  "data-v-6d00292c",
 	  /* cssModules */
@@ -20857,13 +21159,13 @@
 
 
 /***/ }),
-/* 141 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(142);
+	var content = __webpack_require__(148);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
@@ -20883,7 +21185,7 @@
 	}
 
 /***/ }),
-/* 142 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(39)();
@@ -20897,7 +21199,7 @@
 
 
 /***/ }),
-/* 143 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -20970,7 +21272,7 @@
 	};
 
 /***/ }),
-/* 144 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -21030,7 +21332,7 @@
 	}
 
 /***/ }),
-/* 145 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -21060,6 +21362,7 @@
 	        current: 0,
 	        showSubmitAuthModal: false,
 	        showAuthModal: false,
+	        showSuccessModal: false,
 	        authModalType: 'login',
 	        showProfileModal: false,
 	        showResult: false,
@@ -21162,6 +21465,9 @@
 	        },
 	        setAuthModalType: function setAuthModalType(state, payload) {
 	            state.authModalType = payload;
+	        },
+	        setSuccessModal: function setSuccessModal(state, payload) {
+	            state.showSuccessModal = payload;
 	        },
 	        setDiseases: function setDiseases(state, payload) {
 	            state.form.diseases = payload;
@@ -21278,7 +21584,7 @@
 	});
 
 /***/ }),
-/* 146 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';

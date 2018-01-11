@@ -681,18 +681,18 @@
     padding-bottom: 20px;
 }
 
-.form-auth-modal-socials-row {
+.social-auth {
     display: flex;
     align-items: center;
     margin: 0 -5px;
 }
 
-.form-auth-modal-socials-cell {
+.social-auth-item {
     flex: 1 1 auto;
     padding: 5px;
 }
 
-.form-auth-modal-socials-item {
+.social-auth-item-link {
     display: block;
     background: #919191;
     color: #fff;
@@ -704,40 +704,40 @@
     padding: 0 15px;
 }
 
-.form-auth-modal-socials-item:hover {
+.social-auth-item-link:hover {
     background: #a2a2a2;
     color: #fff;
 }
 
-.form-auth-modal-socials-item-vk {
+.social-auth-item-link-vk {
     background-color: #6086b0;
 }
 
-.form-auth-modal-socials-item-vk:hover {
+.social-auth-item-link-vk:hover {
     background-color: #7199c3;
 }
 
-.form-auth-modal-socials-item-fb {
+.social-auth-item-link-fb {
      background-color: #5670aa;
 }
 
-.form-auth-modal-socials-item-fb:hover {
+.social-auth-item-link-fb:hover {
     background-color: #6983bf;
 }
 
-.form-auth-modal-socials-ok {
+.social-auth-item-link-ok {
     background-color: #f68634;
 }
 
-.form-auth-modal-socials-ok:hover {
+.social-auth-item-link-ok:hover {
     background-color: #ff9c4e;
 }
 
-.form-auth-modal-socials-gplus {
+.social-auth-item-link-gplus {
     background-color: #dc4e41;
 }
 
-.form-auth-modal-socials-gplus:hover {
+.social-auth-item-link-gplus:hover {
     background-color: #fe5144;
 }
 
@@ -894,6 +894,65 @@
 .form-profile-modal-submit:hover,
 .form-profile-modal-submit:focus {
     background-color: #00baff;
+}
+
+.form-success-modal {
+    position: relative;
+    max-width: 410px;
+    overflow-y: auto;
+    width: 100%;
+    padding: 30px 40px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    text-align: center;
+}
+
+.form-success-modal-icon {
+    display: inline-block;
+    background: url("../images/test-assets/icon-success-circle.svg") no-repeat center;
+    width: 230px;
+    height: 230px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-success-modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #212121;
+}
+
+.form-success-modal-desc {
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+}
+
+.form-success-modal-submit {
+    display: block;
+    width: 100%;
+    height: 42px;
+    line-height: 42px;
+    border-radius: 3px;
+    background-color: #2cb0e6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form-success-modal-submit:hover,
+.form-success-modal-submit:focus {
+    background-color: #2cc0f6;
+    color: #fff;
 }
 
 .form-breadcrumbs {

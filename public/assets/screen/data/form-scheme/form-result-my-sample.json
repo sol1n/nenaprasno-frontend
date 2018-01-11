@@ -1,0 +1,1369 @@
+{
+  "formId": 1,
+  "userId": 401,
+  "isDeleted": false,
+  "startDate": "2017-05-01T06:12:02.293Z",
+  "submitDate": "2017-05-01T06:12:02.293Z",
+  "createdAt": "2017-05-01T06:12:02.293Z",
+  "updatedAt": "2017-05-01T06:12:02.293Z",
+  "data": [
+    {
+      "controlId": "t1-p1-s1-g1-c1",
+      "controlTitle": "Выберите пол",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 1,
+      "options": [
+        {
+          "title": "Мужской",
+          "value": 0
+        },
+        {
+          "title": "Женский",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p2-s1-g1-c1",
+      "controlTitle": "Тест не гарантирует 100% точности прогноза:",
+      "controlType": "textBlock",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p2-s1-g1-c2",
+      "controlTitle": "Тест НЕ пригоден, если верно хотя бы одно из следующих утверждений:",
+      "controlType": "textBlock",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p2-s1-g1-c3",
+      "controlTitle": "Тест не пригоден, если Вы имеете подтвержденный диагноз «рак» одной из следующих локализаций:",
+      "controlType": "textBlock",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p2-s1-g1-c6",
+      "controlTitle": "Вы согласны на обработку персональных данных",
+      "controlType": "textBlock",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p2-s1-g1-c4",
+      "controlTitle": "Я согласен, продолжить",
+      "controlType": "checkBox",
+      "controlShown": false,
+      "value": null
+    },
+    {
+      "controlId": "t1-p2-s1-g1-c5",
+      "controlTitle": "Я согласна, продолжить",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": true
+    },
+    {
+      "controlId": "t1-p3-s2-g1-c1",
+      "controlTitle": null,
+      "controlType": "numberInput",
+      "controlShown": true,
+      "value": "30"
+    },
+    {
+      "controlId": "t1-p3-s3-g1-c1",
+      "controlTitle": null,
+      "controlType": "numberInput",
+      "controlShown": true,
+      "value": "180"
+    },
+    {
+      "controlId": "t1-p3-s3-g1-c2",
+      "controlTitle": null,
+      "controlType": "numberInput",
+      "controlShown": true,
+      "value": "60"
+    },
+    {
+      "controlId": "t1-p3-s4w1-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "до 12 лет",
+          "value": 0
+        },
+        {
+          "title": "2-14 лет",
+          "value": 1
+        },
+        {
+          "title": "после 14 лет",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s4w2-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "не рожала",
+          "value": 0
+        },
+        {
+          "title": "до 20 лет",
+          "value": 1
+        },
+        {
+          "title": "20-24 лет",
+          "value": 2
+        },
+        {
+          "title": "25-29 лет",
+          "value": 3
+        },
+        {
+          "title": "после 30 лет",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s4w3-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "0",
+          "value": 0
+        },
+        {
+          "title": "1-3",
+          "value": 1
+        },
+        {
+          "title": "4-6",
+          "value": 2
+        },
+        {
+          "title": "более 7",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s4-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        },
+        {
+          "title": "Бросил",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s4-g2-c1",
+      "controlTitle": "Как давно вы бросили?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Менее 5 лет назад",
+          "value": 0
+        },
+        {
+          "title": "6-14 лет назад",
+          "value": 1
+        },
+        {
+          "title": "15 и более лет назад",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s4-g3-c2",
+      "controlTitle": "Сколько лет вы курите или курили?",
+      "controlType": "numberInput",
+      "controlShown": false,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s4-g2-c3",
+      "controlTitle": "Сколько сигарет в день вы выкуриваете или выкуривали?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "До 10",
+          "value": 0
+        },
+        {
+          "title": "До 20",
+          "value": 1
+        },
+        {
+          "title": "До 30",
+          "value": 2
+        },
+        {
+          "title": "40 и более",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s5-g1-c1",
+      "controlTitle": "Как часто употребляете фрукты?",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "1-2 раза в месяц",
+          "value": 0
+        },
+        {
+          "title": "1-2 раза в неделю",
+          "value": 1
+        },
+        {
+          "title": "практически ежедневно",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s5-g1-c2",
+      "controlTitle": "Как часто употребляете овощи и зелень?",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "1-2 раза в месяц",
+          "value": 0
+        },
+        {
+          "title": "1-2 раза в неделю",
+          "value": 1
+        },
+        {
+          "title": "практически ежедневно",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s5-g1-c3",
+      "controlTitle": "Как часто употребляете мясо?",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Не употребляю вообще",
+          "value": 0
+        },
+        {
+          "title": "1-2 раза в месяц",
+          "value": 1
+        },
+        {
+          "title": "1-2 раза в неделю",
+          "value": 2
+        },
+        {
+          "title": "практически ежедневно",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s5-g1-c4",
+      "controlTitle": "Как часто употребляете изделия из мяса?",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Не употребляю вообще",
+          "value": 0
+        },
+        {
+          "title": "1-2 раза в месяц",
+          "value": 1
+        },
+        {
+          "title": "1-2 раза в неделю",
+          "value": 2
+        },
+        {
+          "title": "практически ежедневно",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s5-g1-c6",
+      "controlTitle": "Как часто употребляете алкоголь (в том числе пиво и иные слабоалкогольные напитки)?",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Не употребляю вообще",
+          "value": 0
+        },
+        {
+          "title": "1-2 раза в год",
+          "value": 1
+        },
+        {
+          "title": "1-2 раза в месяц",
+          "value": 2
+        },
+        {
+          "title": "1-2 раза в неделю",
+          "value": 3
+        },
+        {
+          "title": "практически ежедневно",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s4-g3-c7",
+      "controlTitle": "Сколько напитков вы употребляете в неделю? (один напиток это: одна бутылка пива, один бокал вина или рюмка крепкого алкогольного напитка), (штук)",
+      "controlType": "numberInput",
+      "controlShown": false,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s6-g1-c1",
+      "controlTitle": "Аспирин (или иные нестероидные противовоспалительные средства)",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s6-g1-c2",
+      "controlTitle": "Глюкокортикоидные гормоны (внутрь, внутривенно или внутримышечно)",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s6-g1-c3",
+      "controlTitle": "Гормональные контрацептивы",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s6-g1-c4",
+      "controlTitle": "Как долго вы применяете (применяли) гормональные контрацептивы? (лет)",
+      "controlType": "numberInput",
+      "controlShown": false,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s6-g1-c5",
+      "controlTitle": "Эстроген-прогестиновые препараты (гормонозаместительная терапия)",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s6-g1-c6",
+      "controlTitle": "Препараты для подавления иммунитета (иммуносупрессоры)",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s6-g1-c7",
+      "controlTitle": "Другое",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p3-s7-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s7-g1-c2",
+      "controlTitle": "Сколько часов в неделю вы занимаетесь спортом?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "1 час",
+          "value": 1
+        },
+        {
+          "title": "2 часа",
+          "value": 2
+        },
+        {
+          "title": "4 часа",
+          "value": 4
+        },
+        {
+          "title": "5 и более часов",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s8-g1-c1",
+      "controlTitle": "Укажите свой цвет волос",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "темный",
+          "value": 0
+        },
+        {
+          "title": "светлый",
+          "value": 1
+        },
+        {
+          "title": "рыжий",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s8-g1-c2",
+      "controlTitle": "Укажите свой цвет кожи",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "скорее смуглая",
+          "value": 0
+        },
+        {
+          "title": "скорее светлая",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s8-g1-c3",
+      "controlTitle": "Склонны ли вы к солнечным ожогам при загаре?",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 1,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s8-g1-c4",
+      "controlTitle": "Пользуютесь ли вы солярием?",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 2,
+      "options": [
+        {
+          "title": "Да регулярно",
+          "value": 2
+        },
+        {
+          "title": "Да редко",
+          "value": 1
+        },
+        {
+          "title": "Нет не пользуюсь",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s8-g1-c5",
+      "controlTitle": "Укажите количество пигментных невусов (родинок) более 5 мм на спине",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "нет",
+          "value": 0
+        },
+        {
+          "title": "1-2",
+          "value": 1
+        },
+        {
+          "title": "более 2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p3-s8-g1-6",
+      "controlTitle": "Укажите количество пигментных невусов (родинок) размером менее 5 мм на спине",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "нет",
+          "value": 0
+        },
+        {
+          "title": "1-16",
+          "value": 1
+        },
+        {
+          "title": "17 и более",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s1-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s2-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s3-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s4-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s5-g1-c1",
+      "controlTitle": "",
+      "controlType": "checkBoxList",
+      "controlShown": true,
+      "value": [],
+      "options": [
+        {
+          "title": "Сахарный диабет",
+          "value": 1
+        },
+        {
+          "title": "Неспецифический язвенный колит",
+          "value": 2
+        },
+        {
+          "title": "Болезнь Крона",
+          "value": 3
+        },
+        {
+          "title": "Полипы толстой кишки",
+          "value": 4
+        },
+        {
+          "title": "Хламидиоз",
+          "value": 5
+        },
+        {
+          "title": "Хронический гастрит",
+          "value": 6
+        },
+        {
+          "title": "Хеликобактерная инфекция желудка (Helicobacter pylori)",
+          "value": 7
+        },
+        {
+          "title": "Язвенная болезнь желудка",
+          "value": 8
+        },
+        {
+          "title": "Язвенная болезнь 12-перстной кишки",
+          "value": 9
+        },
+        {
+          "title": "ХОБЛ (Хроническая обструктивная болезнь легких)",
+          "value": 10
+        },
+        {
+          "title": "Простатит",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s6-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s7-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Не было",
+          "value": 0
+        },
+        {
+          "title": "Был однажды",
+          "value": 1
+        },
+        {
+          "title": "Были более 1 раза",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s13-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Никогда",
+          "value": 0
+        },
+        {
+          "title": "примерно 1 раз из 5",
+          "value": 1
+        },
+        {
+          "title": "примерно 1 раз из 3х",
+          "value": 2
+        },
+        {
+          "title": "примерно 1 раз из двух",
+          "value": 3
+        },
+        {
+          "title": "примерно 2 раза из трех",
+          "value": 4
+        },
+        {
+          "title": "практически всегда",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s14-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Никогда",
+          "value": 0
+        },
+        {
+          "title": "примерно 1 раз из 5",
+          "value": 1
+        },
+        {
+          "title": "примерно 1 раз из 3х",
+          "value": 2
+        },
+        {
+          "title": "примерно 1 раз из двух",
+          "value": 3
+        },
+        {
+          "title": "примерно 2 раза из трех",
+          "value": 4
+        },
+        {
+          "title": "практически всегда",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s15-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Никогда",
+          "value": 0
+        },
+        {
+          "title": "примерно 1 раз из 5",
+          "value": 1
+        },
+        {
+          "title": "примерно 1 раз из 3х",
+          "value": 2
+        },
+        {
+          "title": "примерно 1 раз из двух",
+          "value": 3
+        },
+        {
+          "title": "примерно 2 раза из трех",
+          "value": 4
+        },
+        {
+          "title": "практически всегда",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s16-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Никогда",
+          "value": 0
+        },
+        {
+          "title": "примерно 1 раз из 5",
+          "value": 1
+        },
+        {
+          "title": "примерно 1 раз из 3х",
+          "value": 2
+        },
+        {
+          "title": "примерно 1 раз из двух",
+          "value": 3
+        },
+        {
+          "title": "примерно 2 раза из трех",
+          "value": 4
+        },
+        {
+          "title": "практически всегда",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s17-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Никогда",
+          "value": 0
+        },
+        {
+          "title": "примерно 1 раз из 5",
+          "value": 1
+        },
+        {
+          "title": "примерно 1 раз из 3х",
+          "value": 2
+        },
+        {
+          "title": "примерно 1 раз из двух",
+          "value": 3
+        },
+        {
+          "title": "примерно 2 раза из трех",
+          "value": 4
+        },
+        {
+          "title": "практически всегда",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s18-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Никогда",
+          "value": 0
+        },
+        {
+          "title": "примерно 1 раз из 5",
+          "value": 1
+        },
+        {
+          "title": "примерно 1 раз из 3х",
+          "value": 2
+        },
+        {
+          "title": "примерно 1 раз из двух",
+          "value": 3
+        },
+        {
+          "title": "примерно 2 раза из трех",
+          "value": 4
+        },
+        {
+          "title": "практически всегда",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s8-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s8-g1-c2",
+      "controlTitle": "Укажите суммарное количество лет кормления всех своих детей (округлите до года)",
+      "controlType": "numberInput",
+      "controlShown": false,
+      "value": null
+    },
+    {
+      "controlId": "t1-p4-s9-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s9-g1-c2",
+      "controlTitle": "Укажите тип мутации",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "BRCA1/2 (Синдром HBOC)",
+          "value": 1
+        },
+        {
+          "title": "p53 (Синдром Li-Fraumeni)",
+          "value": 2
+        },
+        {
+          "title": "PTEN (Синдром Cowden)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s10-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "До 17 лет",
+          "value": 1
+        },
+        {
+          "title": "18 лет и старше",
+          "value": 2
+        },
+        {
+          "title": "не начинала",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s10-g1-c2",
+      "controlTitle": "Сколько было половых партнеров?",
+      "controlType": "numberInput",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p4-s11-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        },
+        {
+          "title": "Не сдавала анализ",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p4-s12-g1-c1",
+      "controlTitle": "",
+      "controlType": "radioButtons",
+      "controlShown": true,
+      "value": 0,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g1-c1",
+      "controlTitle": "Полипы толстой или прямой кишки",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s1-g1-c2",
+      "controlTitle": "Диагноз был установлен в возрасте до 50 лет?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g2-c1",
+      "controlTitle": "Рак кожи или меланома",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s1-g2-c2",
+      "controlTitle": "Рак яичников",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s1-g2-c3",
+      "controlTitle": "Диагноз был установлен в возрасте до 50 лет?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g3-c1",
+      "controlTitle": "Рак толстой или прямой кишки",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s1-g3-c2",
+      "controlTitle": "Сколько родственников первого порядка страдало этим заболеванием?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "1",
+          "value": 1
+        },
+        {
+          "title": "2 и более",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g3-c3",
+      "controlTitle": "Был ли диагноз хотя бы у одного из них установлен в возрасте младше 60 лет?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g4-c1",
+      "controlTitle": "Рак молочной железы",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s1-g4-c2",
+      "controlTitle": "Сколько родственников первого порядка страдало этим заболеванием?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "1",
+          "value": 1
+        },
+        {
+          "title": "2 и более",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g4-c3",
+      "controlTitle": "Был ли хотя бы один случай двустороннего рака молочной железы?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g4-c4",
+      "controlTitle": "Был ли хотя бы один случай рака молочной железы у родственника-мужчины?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "1",
+          "value": 1
+        },
+        {
+          "title": "2 и более",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g4c5",
+      "controlTitle": "Был ли хотя бы один из этих диагнозов установлен в возрасте до 50 лет?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s1-g5-c1",
+      "controlTitle": "",
+      "controlType": "checkBoxList",
+      "controlShown": true,
+      "value": [],
+      "options": [
+        {
+          "title": "Рак поджелудочной железы",
+          "value": 2
+        },
+        {
+          "title": "Рак простаты",
+          "value": 3
+        },
+        {
+          "title": "Саркома",
+          "value": 4
+        },
+        {
+          "title": "Рак коры надпочечника",
+          "value": 5
+        },
+        {
+          "title": "Опухоль мозга",
+          "value": 6
+        },
+        {
+          "title": "Рак эндометрия (рак тела матки)",
+          "value": 7
+        },
+        {
+          "title": "Рак желудка",
+          "value": 8
+        },
+        {
+          "title": "Рак легких",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s2-g1-c1",
+      "controlTitle": "Рак молочной железы",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s2-g1-c2",
+      "controlTitle": "Этот родственник одной родственной линии (материнской или отцовской) с родственником первого порядка?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s2-g2-c1",
+      "controlTitle": "Рак яичников",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s2-g2-c2",
+      "controlTitle": "Этот родственник одной родственной линии (материнской или отцовской) с родственником первого порядка?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s2-g3-c1",
+      "controlTitle": "Рак толстой или прямой кишки",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    },
+    {
+      "controlId": "t1-p5-s2-g3-c2",
+      "controlTitle": "Был ли хотя бы один случай начала заболевания в возрасте до 50 лет?",
+      "controlType": "radioButtons",
+      "controlShown": false,
+      "value": null,
+      "options": [
+        {
+          "title": "Да",
+          "value": 1
+        },
+        {
+          "title": "Нет",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "controlId": "t1-p5-s2-g3-c3",
+      "controlTitle": "Рак эндометрия",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": null
+    }
+  ],
+  "resultData": [
+    {
+      "controlId": "r1-s1-g1-c1",
+      "controlTitle": null,
+      "controlType": "textBlock",
+      "controlShown": false,
+      "value": null
+    },
+    {
+      "controlId": "r1-s1-g1-c2",
+      "controlTitle": "ЭТОТ ТЕСТ НЕПРИГОДЕН ДЛЯ ВАС!",
+      "controlType": "textBlock",
+      "controlShown": false,
+      "value": null
+    }
+  ]
+}

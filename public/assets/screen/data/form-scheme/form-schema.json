@@ -1,0 +1,560 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Form + Form Results schema",
+  "definitions": {
+    "ESideType": {
+      "type": "string",
+      "title": "Сервер или клиент",
+      "default": "server",
+      "enum": [
+        "server",
+        "client"
+      ]
+    },
+    "EStatus": {
+      "type": "string",
+      "title": "Статус формы",
+      "default": "inactive",
+      "enum": [
+        "active",
+        "inactive"
+      ]
+    },
+    "EControlType": {
+      "type": "string",
+      "title": "Тип контрола",
+      "default": "textBox",
+      "enum": [
+        "textBox",
+        "multilineTextBox",
+        "numberInput",
+        "floatInput",
+        "dateTimePicker",
+        "checkBox",
+        "checkBoxList",
+        "radioButtons",
+        "comboBox",
+        "textBlock",
+        "viewObject",
+        "viewObjectList"
+      ]
+    },
+    "BooleanExpression": {
+      "title": "Булево выражение",
+      "type": "object"
+    },
+    "Query": {
+      "title": "Запрос к данным",
+      "type": "object"
+    },
+    "SchemaRequest": {
+      "type": "object",
+      "title": "Запрос к данным схемы",
+      "properties": {
+        "query": {
+          "$ref": "#/defenitions/Query"
+        },
+        "whoRunQuery": {
+          "$ref": "#/defenitions/ESideType"
+        }
+      }
+    },
+    "SchemaRequestWithData": {
+      "type": "object",
+      "title": "Запрос и возвращаемые данные",
+      "properties": {
+        "request": {
+          "$ref": "#/defenitions/SchemaRequest"
+        },
+        "data": {
+          "type": "array",
+          "title": "Список объектов из SchemaRequest"
+        }
+      }
+    },
+    "BooleanExpressionWithError": {
+      "title": "Булево выражение с ошибкой валидации",
+      "description": "Булево выражение с ошибкой",
+      "type": "object",
+      "default": null,
+      "properties": {
+        "booleanExpression": {
+          "$ref": "#/definitions/BooleanExpression"
+        },
+        "errorMessage": {
+          "type": "string",
+          "title": "Текст сообщения об ошибки"
+        }
+      },
+      "required": [
+        "booleanExpression"
+      ]
+    },
+    "DOFormPartSectionGroupControlOption": {
+      "type": "object",
+      "title": "Значение контрола",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Текст значения"
+        },
+        "class": {
+          "type": "string",
+          "title": "Класс для удобства отображения"
+        },
+        "value": {
+          "type": "number",
+          "title": "Значение в числовом эквиваленте"
+        },
+        "displayCondition": {
+          "title": "Условие отображения",
+          "default": null,
+          "$ref": "#/definitions/BooleanExpression"
+        }
+      },
+      "required": [
+        "value",
+        "title"
+      ]
+    },
+    "DOFormPartSectionGroupControl": {
+      "type": "object",
+      "title": "Контрол формы",
+      "description": "Контролы: текст, изображение, поля ввода, выбор и т.п.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "title": "Идентификатор контрола",
+          "default": ""
+        },
+        "title": {
+          "type": "string",
+          "title": "Заголовок контрола"
+        },
+        "placeholder": {
+          "type": "string",
+          "title": "Заполнитель контрола"
+        },
+        "class": {
+          "type": "string",
+          "title": "Класс для удобства отображения"
+        },
+        "description": {
+          "type": "string",
+          "title": "Текстовое описание в контроле",
+          "maxLength": 1024,
+          "default": null
+        },
+        "displayCondition": {
+          "title": "Условие отображения контрола",
+          "default": null,
+          "$ref": "#/definitions/BooleanExpression"
+        },
+        "validateConditions": {
+          "type": "array",
+          "title": "Условия корректности значения",
+          "default": null,
+          "items": {
+            "$ref": "#/definitions/BooleanExpressionWithError"
+          }
+        },
+        "type": {
+          "$ref": "#/definitions/EControlType",
+          "title": "Тип контрола"
+        },
+        "options": {
+          "title": "Список допустимых значений",
+          "type": "object",
+          "default": null,
+          "oneOf": [
+            {
+              "properties": {
+                "$type": {
+                  "type": "string",
+                  "default": "Option[]"
+                },
+                "value": {
+                  "type": "array",
+                  "title": "Список значений",
+                  "items": {
+                    "$ref": "#/definitions/DOFormPartSectionGroupControlOption"
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "$type": {
+                  "type": "string",
+                  "default": "SchemaRequestWithData"
+                },
+                "value": {
+                  "$ref": "#/definitions/SchemaRequestWithData"
+                }
+              }              
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "type"
+      ]
+    },
+    "DOFormPartSectionGroup": {
+      "type": "object",
+      "title": "Группа контролов",
+      "description": "Является неделимой сущностью для показа на экране (не может делиться на разные экраны), в том числе на маленьних телефонах",
+      "properties": {
+        "class": {
+          "type": "string",
+          "title": "Класс для удобства отображения"
+        },
+        "displayCondition": {
+          "title": "Условие отображение группы",
+          "default": null,
+          "$ref": "#/definitions/BooleanExpression"
+        },
+        "controls": {
+          "type": "array",
+          "title": "Список контролов в группе",
+          "description": "Контролы: текст, изображение, поля ввода, выбор и т.п.",
+          "items": {
+            "$ref": "#/definitions/DOFormPartSectionGroupControl"
+          }
+        }
+      },
+      "required": [
+      ]
+    },
+    "DOFormPartSection": {
+      "type": "object",
+      "title": "Подраздел (секция) раздела формы",
+      "properties": {
+        "class": {
+          "type": "string",
+          "title": "Класс для удобства отображения"
+        },
+        "title": {
+          "type": "string",
+          "title": "Заголовок секции",
+          "maxLength": 256,
+          "default": "Секция №"
+        },
+        "description": {
+          "type": "string",
+          "title": "Описание секции",
+          "description": "Произвольный текст, выводимый на странице",
+          "maxLength": 1024,
+          "default": ""
+        },
+        "displayCondition": {
+          "title": "Условие отображение секции",
+          "default": null,
+          "$ref": "#/definitions/BooleanExpression"
+        },
+        "groups": {
+          "type": "array",
+          "title": "Группы контролов в секций раздела формы",
+          "items": {
+            "$ref": "#/definitions/DOFormPartSectionGroup"
+          }
+        }
+      },
+      "required": [
+      ]
+    },
+    "DOFormPart": {
+      "type": "object",
+      "title": "Часть (раздел) формы",
+      "description": "Раздел формы на больших экранах (в том числе в вебе) соответствует одному экрану приложения",
+      "properties": {
+        "class": {
+          "type": "string",
+          "title": "Класс для удобства отображения"
+        },
+        "title": {
+          "type": "string",
+          "title": "Заголовок раздела",
+          "maxLength": 256,
+          "default": "Страница №"
+        },
+        "description": {
+          "type": "string",
+          "title": "Описание раздела",
+          "description": "Произвольный текст, выводимый на странице",
+          "maxLength": 1024,
+          "default": ""
+        },
+        "displayCondition": {
+          "title": "Условие отображение раздела",
+          "default": null,
+          "$ref": "#/definitions/BooleanExpression"
+        },
+        "sections": {
+          "type": "array",
+          "title": "Список секций раздела формы",
+          "items": {
+            "$ref": "#/definitions/DOFormPartSection"
+          }
+        }
+      },
+      "required": [
+      ]
+    },
+    "DOForm": {
+      "type": "object",
+      "title": "Форма",
+      "description": "Описание формы, анкеты, опроса или теста",
+      "properties": {
+        "id": {
+          "type": "number",
+          "title": "Идентификатор формы",
+          "default": ""
+        },
+        "createdAt": {
+          "type": "#/definitions/DateTime",
+          "title": "Дата создания формы",
+          "default": ""
+        },
+        "updatedAt": {
+          "type": "#/definitions/DateTime",
+          "title": "Дата последнего обновления формы",
+          "default": ""
+        },
+        "isDeleted": {
+          "type": "boolean",
+          "title": "Удалена ли форма в корзину",
+          "default": "false"
+        },
+        "title": {
+          "type": "string",
+          "title": "Название формы",
+          "maxLength": 256,
+          "default": "Форма №"
+        },
+        "status": {
+          "$ref": "#/definitions/EStatus"
+        },
+        "parts": {
+          "type": "array",
+          "title": "Список разделов формы",
+          "items": {
+            "$ref": "#/definitions/DOFormPart"
+          }
+        },
+        "resultPart": {
+          "title": "Раздел с результатом",
+          "description": "Раздел, который показывается после оправки данных формы. На практике они не должны содержать контролов ввода, а только вывода.",
+          "$ref": "#/definitions/DOFormPart"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "status"
+      ]
+    },
+
+    "DOFormResultControlValueOption": {
+      "type": "object",
+      "title": "Значение контрола в результате",
+      "properties": {
+        "title": {
+          "type": "string",
+          "title": "Текст значения"
+        },
+        "value": {
+          "type": "number",
+          "title": "Значение в числовом эквиваленте"
+        }
+      },
+      "required": [
+        "title",
+        "value"
+      ]
+    },
+    "DOFormResultControlValue": {
+      "type": "object",
+      "title": "Значение контрола в результате заполнения формы",
+      "properties": {
+        "controlId": {
+          "type": "string",
+          "title": "Идентификатор контрола"
+        },
+        "controlTitle": {
+          "type": "string",
+          "title": "Заголовок контрола"
+        },
+        "controlType": {
+          "$ref": "#/definitions/EControlType",
+          "title": "Тип контрола"
+        },
+        "controlShown": {
+          "type": "boolean",
+          "title": "Был ли показан контрол"
+        },
+        "value": {
+          "title": "Значение контрола",
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            {
+              "properties": {
+                "$type": {
+                  "type": "string",
+                  "default": "Object"
+                },
+                "value": {
+                  "type": "object",
+                  "title": "Скалярное значение"
+                }
+              }
+            },
+            {
+              "properties": {
+                "$type": {
+                  "type": "string",
+                  "default": "Decimal[]"
+                },
+                "value": {
+                  "type": "array",
+                  "title": "Список выбранных значений контрола с Options",
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "$type": {
+                  "type": "string",
+                  "default": "SchemaRequestWithData"
+                },
+                "value": {
+                  "title": "Списко выбранных значений из контрола с SchemaRequestWithData",
+                  "$ref": "#/definitions/SchemaRequestWithData"
+                }
+              }
+            }
+          ]
+        },
+        "options": {
+          "title": "Список значений",
+          "default": null,
+          "oneOf": [
+            {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/DOFormResultControlValueOption"
+              }
+            },
+            {
+              "$ref": "#/definitions/SchemaRequestWithData"
+            },
+            {
+              "properties": {
+                "$type": {
+                  "type": "string",
+                  "default": "FormResultControlValueOption[]"
+                },
+                "value": {
+                  "type": "array",
+                  "title": "Список значений",
+                  "items": {
+                    "$ref": "#/definitions/DOFormResultControlValueOption"
+                  }
+                }
+              }
+            },
+            {
+              "properties": {
+                "$type": {
+                  "type": "string",
+                  "default": "SchemaRequestWithData"
+                },
+                "value": {
+                  "title": "Списко значений из SchemaRequestWithData",
+                  "$ref": "#/definitions/SchemaRequestWithData"
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "DOFormResult": {
+      "type": "object",
+      "title": "Результат заполнения формы",
+      "properties": {
+        "id": {
+          "type": "number",
+          "title": "Идентификатор результатов формы",
+          "default": ""
+        },
+        "createdAt": {
+          "type": "#/definitions/DateTime",
+          "title": "Дата создания результатов",
+          "default": ""
+        },
+        "updatedAt": {
+          "type": "#/definitions/DateTime",
+          "title": "Дата последнего обновления результатов",
+          "default": ""
+        },
+        "isDeleted": {
+          "type": "boolean",
+          "title": "Удалены ли результаты в корзину",
+          "default": "false"
+        },
+        "formId": {
+          "type": "number",
+          "title": "Идентификатор формы"
+        },
+        "userId": {
+          "type": "number",
+          "title": "Идентификатор пользователя"
+        },
+        "startDate": {
+          "$ref": "#/definitions/DateTime",
+          "title": "Время начала заполнения формы",
+          "default": "2016-01-12 13:56:16"
+        },
+        "submitDate": {
+          "$ref": "#/definitions/DateTime",
+          "title": "Время завершения заполнения формы",
+          "default": "2016-01-12 13:56:16"
+        },
+        "data": {
+          "type": "array",
+          "title": "Значения контролов на форме выбранные/введенные пользователем",
+          "items": {
+            "$ref": "#/definitions/DOFormResultControlValue"
+          }
+        },
+        "resultData": {
+          "type": "array",
+          "title": "Значения контролов на странице результатов",
+          "items": {
+            "$ref": "#/definitions/DOFormResultControlValue"
+          }
+        }
+      }
+    }
+  },
+  "$ref": "#/definitions/DOForm"
+}

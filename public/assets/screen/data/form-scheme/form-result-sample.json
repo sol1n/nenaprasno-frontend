@@ -1,0 +1,174 @@
+{
+  "id": 36,
+  "createdAt": "2016-11-28T05:44:57.037Z",
+  "updatedAt": "2016-11-28T05:44:57.037Z",
+  "isDeleted": false,
+  "formId": "1",
+  "userId": "2324234",
+  "startDate": "2016-01-12 13:56:16",
+  "submitDate": "2016-01-12 13:56:16",
+  "data": [
+    {
+      "controlId": "c1",
+      "controlTitle": "ФИО",
+      "controlType": "textBox",
+      "controlShown": true,
+      "value": "Иванов Иван Иванович"
+    },
+    {
+      "controlId": "c2",
+      "controlTitle": "Возраст",
+      "controlType": "numberInput",
+      "controlShown": true,
+      "value": 70
+    },
+    {
+      "controlId": "c3",
+      "controlTitle": "Дата подачи заявления",
+      "controlType": "dateTimePicker",
+      "controlShown": true,
+      "value": "2016-11-21"
+    },
+    {
+      "controlId": "c4",
+      "controlTitle": "Возникшие проблемы",
+      "controlType": "checkBoxList",
+      "controlShown": true,
+      "value": [
+        2,
+        3
+      ],
+      "options": [
+        {
+          "title": "Проблема 1",
+          "value": 1
+        },
+        {
+          "title": "Проблема два",
+          "value": 2
+        },
+        {
+          "title": "Проблема три",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "controlId": "с5",
+      "controlTitle": "Согласие на обработку персональных данных",
+      "controlType": "checkBox",
+      "controlShown": true,
+      "value": true
+    },
+    {
+      "controlId": "с7",
+      "controlTitle": "Это крупнейший город Европы",
+      "controlType": "viewObjectList",
+      "controlShown": true,
+      "options": {
+        "request": {
+          "whoRunQuery": "server",
+          "query": {
+            "schema": "CityPhotos",
+            "include": [ "id", "photo" ],
+            "where": {
+              "id": "msk"
+            }
+          }
+        },
+        "data": [
+          {
+            "id": "photo-1",
+            "photo": "imag1.jpg"
+          },
+          {
+            "id": "photo-2",
+            "photo": "imag2.jpg"
+          },
+          {
+            "id": "photo-3",
+            "photo": "imag3.png"
+          }
+        ]
+      }
+    },
+    {
+      "controlId": "с8",
+      "controlTitle": "Столицей какой страны он является?",
+      "controlType": "comboBox",
+      "controlShown": true,
+      "value": {
+        "request": {
+          "whoRunQuery": "server",
+          "query": {
+            "schema": "Country",
+            "include": [ "id", "title" ]
+          }
+        },
+        "data": [
+          {
+            "id": "RUS",
+            "title": "Россия"
+          }
+        ]
+      },
+      "options": {
+        "request": {
+          "whoRunQuery": "server",
+          "query": {
+            "schema": "Country",
+            "include": [ "id", "title" ]
+          }
+        },
+        "data": [
+          {
+            "id": "RUS",
+            "title": "Россия"
+          },
+          {
+            "id": "USA",
+            "title": "США"
+          },
+          {
+            "id": "IL",
+            "title": "Израиль"
+          }
+        ]
+      }
+    }
+  ],
+  "resultData": [
+    {
+      "controlId": "rpt3",
+      "controlTitle": "",
+      "controlShown": true,
+      "value": "Вы абсолютно правы это Москва столица России!",
+      "controlType": "textBlock"
+    },
+    {
+      "controlId": "rpt4",
+      "controlTitle": "Дополнительная информация о Москве",
+      "controlType": "viewObject",
+      "controlShown": true,
+      "options": {
+        "request": {
+          "whoRunQuery": "server",
+          "query": {
+            "schema": "City",
+            "include": [ "id", "title", "additionInformation" ],
+            "where": {
+              "id": "msk"
+            }
+          }
+        },
+        "data": [
+          {
+            "id": "msk",
+            "title": "Москва",
+            "additionInformation": "Moscow is the capital and most populous city of the Russian Federation..."
+          }
+        ]
+      }
+    }
+  ]
+}

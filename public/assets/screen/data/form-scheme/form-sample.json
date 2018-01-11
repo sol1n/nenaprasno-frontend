@@ -1,0 +1,3451 @@
+{
+  "title": "Тест раннего выявления рака",
+  "status": "active",
+  "parts": [
+    {
+      "title": "Начните тест",
+      "class": null,
+      "description": null,
+      "displayCondition": null,
+      "sections": [
+        {
+          "title": "Начните тест",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p1-s1-g1-c1",
+                  "title": "Выберите пол",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите пол"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Мужской",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Женский",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Страница предупреждения",
+      "class": null,
+      "description": null,
+      "displayCondition": null,
+      "sections": [
+        {
+          "title": "Важно",
+          "class": "form-section-warning",
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p2-s1-g1-c1",
+                  "title": "Тест не гарантирует 100% точности прогноза:",
+                  "description": "• Низкий риск не означает, что рак не разовьется – это означает, что вероятность развития рака на данный момент ниже, чем в популяции, но она не равна нулю.\n\r • высокий риск не означает, что рак непременно разовьется – это означает, что Вам необходимо принять радикальные меры для снижения риска.",
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "textBlock",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p2-s1-g1-c2",
+                  "title": "Тест НЕ пригоден, если верно хотя бы одно из следующих утверждений:",
+                  "description": "• Вы младше 20 лет. \n\r • Вы страдаете семейным полипозом толстой кишки.",
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "textBlock",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p2-s1-g1-c3",
+                  "title": "Тест не пригоден, если Вы имеете подтвержденный диагноз «рак» одной из следующих локализаций:",
+                  "description": "• Рак кожи \n\r • Рак легких \n\r • Рак молочной железы \n\r • Рак желудка \n\r • Рак толстой и прямой кишки \n\r • Рак простаты",
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "textBlock",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p2-s1-g1-c6",
+                  "title": "Вы согласны на обработку персональных данных",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "textBlock",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p2-s1-g1-c4",
+                  "title": "Я согласен, продолжить",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p1-s1-g1-c1": 0
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          true
+                        ]
+                      },
+                      "errorMessage": "Вы должны согласиться с условиями перед тем как продолжить"
+                    }
+                  ],
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p2-s1-g1-c5",
+                  "title": "Я согласна, продолжить",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          true
+                        ]
+                      },
+                      "errorMessage": "Вы должны согласиться с условиями перед тем как продолжить"
+                    }
+                  ],
+                  "type": "checkBox",
+                  "options": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Факторы риска",
+      "class": "breadcrumbs",
+      "description": null,
+      "displayCondition": {
+        "$or": [
+          {
+            "t1-p2-s1-g1-c4": true
+          },
+          {
+            "t1-p2-s1-g1-c5": true
+          }
+        ]
+      },
+      "sections": [
+        {
+          "title": "Возраст, рост, вес",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": "form-flexbox form-flexbox-wrap",
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": "form-flexbox-col form-flexbox-col-150px",
+                  "id": "t1-p3-s2-g1-c1",
+                  "title": null,
+                  "description": null,
+                  "placeholder": "полных лет",
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gte": 20
+                      },
+                      "errorMessage": "Возраст должен быть больше или равен 20"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-150px",
+                  "id": "t1-p3-s3-g1-c1",
+                  "title": null,
+                  "description": null,
+                  "placeholder": "рост, см",
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gte": 90
+                      },
+                      "errorMessage": "Рост должен быть больше или равен 90"
+                    },
+                    {
+                      "booleanExpression": {
+                        "$lte": 250
+                      },
+                      "errorMessage": "Рост должен быть меньше или равен 250"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-150px",
+                  "id": "t1-p3-s3-g1-c2",
+                  "title": null,
+                  "description": null,
+                  "placeholder": "вес, кг",
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gte": 30
+                      },
+                      "errorMessage": "Вес должен быть больше или равен 30"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Начало менструаций",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p3-s4w1-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите время начала менструаций"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "до 12 лет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "2-14 лет",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "после 14 лет",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Первые роды",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p3-s4w2-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите время первых родов"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "не рожала",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "до 20 лет",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "20-24 лет",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "25-29 лет",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "после 30 лет",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Количество абортов",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p3-s4w3-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите количество абортов"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "0",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-3",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "4-6",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "более 7",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Курите ли вы?",
+          "class": "form-flexbox form-flexbox-wrap",
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": "form-flexbox-col form-flexbox-col-150px",
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p3-s4-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, ответьте курите ли вы"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Бросил",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "class": "form-flexbox",
+              "displayCondition": {
+                "t1-p3-s4-g1-c1": {
+                  "$in": [
+                    1,
+                    2
+                  ]
+                }
+              },
+              "controls": [
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33 form-control-right-arrow",
+                  "id": "t1-p3-s4-g2-c1",
+                  "title": "Как давно вы бросили?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p3-s4-g1-c1": 2
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите как давно вы бросили курить"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Менее 5 лет назад",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "6-14 лет назад",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "15 и более лет назад",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33 form-control-right-arrow",
+                  "id": "t1-p3-s4-g3-c2",
+                  "title": "Сколько лет вы курите или курили?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gt": 0
+                      },
+                      "errorMessage": "Срок курения должен быть больше 0"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33 form-control-right-arrow",
+                  "id": "t1-p3-s4-g2-c3",
+                  "title": "Сколько сигарет в день вы выкуриваете или выкуривали?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите сколько сигарет в день вы выкуриваете или выкуривали"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "До 10",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "До 20",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "До 30",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "40 и более",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Питание",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": "form-flexbox form-flexbox-wrap",
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": "form-flexbox-col form-flexbox-col-25",
+                  "id": "t1-p3-s5-g1-c1",
+                  "title": "Как часто употребляете фрукты?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите как часто вы употребляете фрукты"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "1-2 раза в месяц",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в неделю",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически ежедневно",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-25",
+                  "id": "t1-p3-s5-g1-c2",
+                  "title": "Как часто употребляете овощи и зелень?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите как часто вы употребляете овощи и зелень"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "1-2 раза в месяц",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в неделю",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически ежедневно",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-25",
+                  "id": "t1-p3-s5-g1-c3",
+                  "title": "Как часто употребляете мясо?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите как часто вы употребляете мясо"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Не употребляю вообще",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в месяц",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в неделю",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически ежедневно",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-25",
+                  "id": "t1-p3-s5-g1-c4",
+                  "title": "Как часто употребляете изделия из мяса?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите как часто вы употребляете изделия из мяса"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Не употребляю вообще",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в месяц",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в неделю",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически ежедневно",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox form-flexbox-wrap",
+                  "id": "t1-p3-s5-g1-c6",
+                  "title": "Как часто употребляете алкоголь (в том числе пиво и иные слабоалкогольные напитки)?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите как часто вы употребляете алкоголь (в том числе пиво и иные слабоалкогольные напитки)"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Не употребляю вообще",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в год",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в месяц",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2 раза в неделю",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически ежедневно",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p3-s4-g3-c7",
+                  "title": "Сколько напитков вы употребляете в неделю? (один напиток это: одна бутылка пива, один бокал вина или рюмка крепкого алкогольного напитка), (штук)",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p3-s5-g1-c6": {
+                      "$in": [
+                        3,
+                        4
+                      ]
+                    }
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gt": 0
+                      },
+                      "errorMessage": "Количество напитков должно быть больше 0"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Какие из этих лекарственных средств Вы принимаете постоянно?",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p3-s6-g1-c1",
+                  "title": "Аспирин (или иные нестероидные противовоспалительные средства)",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p3-s6-g1-c2",
+                  "title": "Глюкокортикоидные гормоны (внутрь, внутривенно или внутримышечно)",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p3-s6-g1-c3",
+                  "title": "Гормональные контрацептивы",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-50 form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p3-s6-g1-c4",
+                  "title": "Как долго вы применяете (применяли) гормональные контрацептивы? (лет)",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p3-s6-g1-c3": true
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gt": 0
+                      },
+                      "errorMessage": "Срок применения должен быть больше 0"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p3-s6-g1-c5",
+                  "title": "Эстроген-прогестиновые препараты (гормонозаместительная терапия)",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p3-s6-g1-c6",
+                  "title": "Препараты для подавления иммунитета (иммуносупрессоры)",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p3-s6-g1-c7",
+                  "title": "Другое",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                }
+              ]
+            },
+            {
+              "class": null,
+              "displayCondition": {
+                "t1-p3-s6-g1-c1": 4
+              },
+              "controls": null
+            }
+          ]
+        },
+        {
+          "title": "Занимаетесь ли Вы на регулярной основе каким-либо подвижным спортом?",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": "form-flexbox",
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": "form-flexbox-col",
+                  "id": "t1-p3-s7-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите занимаетесь ли вы спортом"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-control-right-arrow",
+                  "id": "t1-p3-s7-g1-c2",
+                  "title": "Сколько часов в неделю вы занимаетесь спортом?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p3-s7-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          1,
+                          2,
+                          4,
+                          5
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите сколько часов в неделю вы занимаетесь спортом"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "1 час",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "2 часа",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "4 часа",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "5 и более часов",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Кожа",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": "form-flexbox form-flexbox-wrap",
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33",
+                  "id": "t1-p3-s8-g1-c1",
+                  "title": "Укажите свой цвет волос",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите свой цвет волос"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "темный",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "светлый",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "рыжий",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33",
+                  "id": "t1-p3-s8-g1-c2",
+                  "title": "Укажите свой цвет кожи",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите свой цвет кожи"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "скорее смуглая",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "скорее светлая",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33",
+                  "id": "t1-p3-s8-g1-c3",
+                  "title": "Склонны ли вы к солнечным ожогам при загаре?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите склонны ли вы к солнечным ожогам при загаре"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33",
+                  "id": "t1-p3-s8-g1-c4",
+                  "title": "Пользуютесь ли вы солярием?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите пользуютесь ли вы солярием"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да регулярно",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Да редко",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет не пользуюсь",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33",
+                  "id": "t1-p3-s8-g1-c5",
+                  "title": "Укажите количество пигментных невусов (родинок) более 5 мм на спине",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите количество пигментных невусов (родинок) более 5 мм на спине"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-2",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "более 2",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-flexbox-col form-flexbox-col-33",
+                  "id": "t1-p3-s8-g1-6",
+                  "title": "Укажите количество пигментных невусов (родинок) размером менее 5 мм на спине",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите количество пигментных невусов (родинок) менее 5 мм на спине"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "1-16",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "17 и более",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "История жизни",
+      "class": "breadcrumbs",
+      "description": null,
+      "displayCondition": {
+        "$or": [
+          {
+            "t1-p2-s1-g1-c4": true
+          },
+          {
+            "t1-p2-s1-g1-c5": true
+          }
+        ]
+      },
+      "sections": [
+        {
+          "title": "Переносили ли Вы удаление матки?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s1-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите переносили ли Вы удаление матки"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Переносили ли Вы удаление яичников?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s2-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите переносили ли Вы удаление яичников"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Вакцинировались ли Вы от вируса папилломы человека (церварикс/гардасил)?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s3-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите вакцинировались ли Вы от вируса папилломы человека (церварикс/гардасил)"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Получали ли вы лучевую терапию на область выше диафрагмы (грудная клетка, голова или шея) в возрасте до 30 лет?",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s4-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите получали ли вы лучевую терапию на область выше диафрагмы (грудная клетка, голова или шея) в возрасте до 30 лет"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Есть (или были) ли у вас следующие заболевания?",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s5-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBoxList",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Сахарный диабет",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Неспецифический язвенный колит",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Болезнь Крона",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Полипы толстой кишки",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Хламидиоз",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": {
+                          "t1-p1-s1-g1-c1": 1
+                        }
+                      },
+                      {
+                        "title": "Хронический гастрит",
+                        "class": null,
+                        "value": 6,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Хеликобактерная инфекция желудка (Helicobacter pylori)",
+                        "class": null,
+                        "value": 7,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Язвенная болезнь желудка",
+                        "class": null,
+                        "value": 8,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Язвенная болезнь 12-перстной кишки",
+                        "class": null,
+                        "value": 9,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "ХОБЛ (Хроническая обструктивная болезнь легких)",
+                        "class": null,
+                        "value": 10,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Простатит",
+                        "class": null,
+                        "value": 11,
+                        "displayCondition": {
+                          "t1-p1-s1-g1-c1": 0
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Были ли у Вас эпизоды солнечных ожогов в детстве?",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s6-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите были ли у Вас эпизоды солнечных ожогов в детстве"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Были ли у вас эпизоды тяжелых солнечных ожогов в течение жизни?",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s7-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, укажите были ли у Вас эпизоды тяжелых солнечных ожогов в течение жизни"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Не было",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Был однажды",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Были более 1 раза",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Как часто вы испытывали чувство неполного опорожнения мочевого пузыря при мочеиспускании?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p3-s2-g1-c1": {
+              "$gte": 55
+            },
+            "t1-p1-s1-g1-c1": 0
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s13-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Никогда",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 5",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 3х",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из двух",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 2 раза из трех",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически всегда",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Как часто вы останавливаетесь и начинаете мочиться снова во время мочеиспускания?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p3-s2-g1-c1": {
+              "$gte": 55
+            },
+            "t1-p1-s1-g1-c1": 0
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s14-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Никогда",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 5",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 3х",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из двух",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 2 раза из трех",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически всегда",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Как часто вы затруднялись сдержать мочеиспускание после того как вы почувствовали необходимость?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p3-s2-g1-c1": {
+              "$gte": 55
+            },
+            "t1-p1-s1-g1-c1": 0
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s15-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Никогда",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 5",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 3х",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из двух",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 2 раза из трех",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически всегда",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Как часто вы замечали снижение силы струи мочи?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p3-s2-g1-c1": {
+              "$gte": 55
+            },
+            "t1-p1-s1-g1-c1": 0
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s16-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Никогда",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 5",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 3х",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из двух",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 2 раза из трех",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически всегда",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Как часто вам приходилось напрягаться, чтобы начать мочеиспускание?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p3-s2-g1-c1": {
+              "$gte": 55
+            },
+            "t1-p1-s1-g1-c1": 0
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s17-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Никогда",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 5",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 3х",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из двух",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 2 раза из трех",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически всегда",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Как часто вы просыпаетесь ночью чтобы помочиться?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p3-s2-g1-c1": {
+              "$gte": 55
+            },
+            "t1-p1-s1-g1-c1": 0
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s18-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2,
+                          3,
+                          4,
+                          5
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Никогда",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 5",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из 3х",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 1 раз из двух",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "примерно 2 раза из трех",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "практически всегда",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Кормили ли Вы грудью?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s8-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p4-s8-g1-c2",
+                  "title": "Укажите суммарное количество лет кормления всех своих детей (округлите до года)",
+                  "description": null,
+                  "placeholder": "лет",
+                  "displayCondition": {
+                    "t1-p4-s8-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gt": 0
+                      },
+                      "errorMessage": "Значение должно быть больше 0"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Есть ли у вас установленные мутации генов повышающих риск рака?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s9-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p4-s9-g1-c2",
+                  "title": "Укажите тип мутации",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p4-s9-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          1,
+                          2,
+                          3
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "BRCA1/2 (Синдром HBOC)",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "p53 (Синдром Li-Fraumeni)",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "PTEN (Синдром Cowden)",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Сколько Вам было лет когда вы начали половую жизнь?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s10-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "До 17 лет",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "18 лет и старше",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "не начинала",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p4-s10-g1-c2",
+                  "title": "Сколько было половых партнеров?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p4-s10-g1-c1": {
+                      "$in": [
+                        1,
+                        2
+                      ]
+                    }
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$gt": 0
+                      },
+                      "errorMessage": "Значение должно быть больше 0"
+                    }
+                  ],
+                  "type": "numberInput",
+                  "options": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Инфицированы ли Вы вирусом папилломы человека (HPV)?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s11-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1,
+                          2
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Не сдавала анализ",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Есть ли у вас импланты после операции по увеличению груди?",
+          "class": null,
+          "description": null,
+          "displayCondition": {
+            "t1-p1-s1-g1-c1": 1
+          },
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p4-s12-g1-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Семейная история",
+      "class": "breadcrumbs",
+      "description": null,
+      "displayCondition": {
+        "$or": [
+          {
+            "t1-p2-s1-g1-c4": true
+          },
+          {
+            "t1-p2-s1-g1-c5": true
+          }
+        ]
+      },
+      "sections": [
+        {
+          "title": "Есть ли среди ваших родственников первого порядка случаи заболевания? (Отец/Мать, Сестра/Брат, Сын/Дочь)",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s1-g1-c1",
+                  "title": "Полипы толстой или прямой кишки",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g1-c2",
+                  "title": "Диагноз был установлен в возрасте до 50 лет?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g1-c1": true
+                  },
+                  "validateConditions": null,
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s1-g2-c1",
+                  "title": "Рак кожи или меланома",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": null,
+                  "id": "t1-p5-s1-g2-c2",
+                  "title": "Рак яичников",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g2-c3",
+                  "title": "Диагноз был установлен в возрасте до 50 лет?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g2-c2": true
+                  },
+                  "validateConditions": null,
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s1-g3-c1",
+                  "title": "Рак толстой или прямой кишки",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g3-c2",
+                  "title": "Сколько родственников первого порядка страдало этим заболеванием?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g3-c1": true
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          2,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "1",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "2 и более",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g3-c3",
+                  "title": "Был ли диагноз хотя бы у одного из них установлен в возрасте младше 60 лет?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g3-c1": true
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s1-g4-c1",
+                  "title": "Рак молочной железы",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g4-c2",
+                  "title": "Сколько родственников первого порядка страдало этим заболеванием?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g4-c1": true,
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          2,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "1",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "2 и более",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g4-c3",
+                  "title": "Был ли хотя бы один случай двустороннего рака молочной железы?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g4-c1": true,
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g4-c4",
+                  "title": "Был ли хотя бы один случай рака молочной железы у родственника-мужчины?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g4-c1": true,
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          2,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "1",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "2 и более",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s1-g4c5",
+                  "title": "Был ли хотя бы один из этих диагнозов установлен в возрасте до 50 лет?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s1-g4-c1": true,
+                    "t1-p1-s1-g1-c1": 1
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s1-g5-c1",
+                  "title": "",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBoxList",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Рак поджелудочной железы",
+                        "class": null,
+                        "value": 2,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Рак простаты",
+                        "class": null,
+                        "value": 3,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Саркома",
+                        "class": null,
+                        "value": 4,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Рак коры надпочечника",
+                        "class": null,
+                        "value": 5,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Опухоль мозга",
+                        "class": null,
+                        "value": 6,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Рак эндометрия (рак тела матки)",
+                        "class": null,
+                        "value": 7,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Рак желудка",
+                        "class": null,
+                        "value": 8,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Рак легких",
+                        "class": null,
+                        "value": 9,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Есть ли среди Ваших родственников второго порядка заболевания? (Дедушка/Бабушка, Тетя/Дядя)",
+          "class": null,
+          "description": null,
+          "displayCondition": null,
+          "groups": [
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s2-g1-c1",
+                  "title": "Рак молочной железы",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s2-g1-c2",
+                  "title": "Этот родственник одной родственной линии (материнской или отцовской) с родственником первого порядка?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s2-g1-c1": true,
+                    "t1-p1-s1-g1-c1": 1,
+                    "t1-p5-s1-g4-c1": true
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s2-g2-c1",
+                  "title": "Рак яичников",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s2-g2-c2",
+                  "title": "Этот родственник одной родственной линии (материнской или отцовской) с родственником первого порядка?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s2-g2-c1": true,
+                    "t1-p1-s1-g1-c1": 1,
+                    "t1-p5-s1-g2-c2": true
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "class": null,
+              "displayCondition": null,
+              "controls": [
+                {
+                  "class": null,
+                  "id": "t1-p5-s2-g3-c1",
+                  "title": "Рак толстой или прямой кишки",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                },
+                {
+                  "class": "form-control-subcontrol form-control-bottom-arrow",
+                  "id": "t1-p5-s2-g3-c2",
+                  "title": "Был ли хотя бы один случай начала заболевания в возрасте до 50 лет?",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": {
+                    "t1-p5-s2-g3-c1": true,
+                    "t1-p5-s1-g3-c1": true
+                  },
+                  "validateConditions": [
+                    {
+                      "booleanExpression": {
+                        "$in": [
+                          0,
+                          1
+                        ]
+                      },
+                      "errorMessage": "Пожалуйста, выберите одно из значений"
+                    }
+                  ],
+                  "type": "radioButtons",
+                  "options": {
+                    "$type": "Option[]",
+                    "value": [
+                      {
+                        "title": "Да",
+                        "class": null,
+                        "value": 1,
+                        "displayCondition": null
+                      },
+                      {
+                        "title": "Нет",
+                        "class": null,
+                        "value": 0,
+                        "displayCondition": null
+                      }
+                    ]
+                  }
+                },
+                {
+                  "class": null,
+                  "id": "t1-p5-s2-g3-c3",
+                  "title": "Рак эндометрия",
+                  "description": null,
+                  "placeholder": null,
+                  "displayCondition": null,
+                  "validateConditions": null,
+                  "type": "checkBox",
+                  "options": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "resultPart": {
+    "title": "Спасибо!",
+    "class": null,
+    "description": null,
+    "displayCondition": null,
+    "sections": [
+      {
+        "title": null,
+        "class": null,
+        "description": null,
+        "displayCondition": null,
+        "groups": [
+          {
+            "class": null,
+            "displayCondition": null,
+            "controls": [
+              {
+                "class": null,
+                "id": "r1-s1-g1-c1",
+                "title": null,
+                "description": "Благодарим за заполнение формы!",
+                "placeholder": null,
+                "displayCondition": null,
+                "validateConditions": null,
+                "type": "textBlock",
+                "options": null
+              },
+              {
+                "class": null,
+                "id": "r1-s1-g1-c2",
+                "title": "ЭТОТ ТЕСТ НЕПРИГОДЕН ДЛЯ ВАС!",
+                "description": "Если вы перенесли рак одной из следующих локализаций (рак кожи, рак легких, рак молочной железы, рак шейки матки, рак желудка, рак толстой и прямой кишки, рак простаты) или являетесь онкологическим пациентом в настоящий момент, тест на риски рака для Вас непригоден.",
+                "placeholder": null,
+                "displayCondition": {
+                  "t1-p3-s1-g1-c1": {
+                    "$in": [
+                      1,
+                      2,
+                      3,
+                      4,
+                      5,
+                      6,
+                      7
+                    ]
+                  }
+                },
+                "validateConditions": null,
+                "type": "textBlock",
+                "options": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "id": 1,
+  "createdAt": "2017-02-10T11:14:41.446202+00:00",
+  "updatedAt": "2017-02-10T11:14:41.446202+00:00",
+  "isDeleted": false
+}
