@@ -1,0 +1,96 @@
+.launch-teaser-wrapper {
+  max-width: 770px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.launch-teaser {
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  @media (min-width: 48em) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+.launch-teaser-logo {
+  max-width: 360px;
+
+  @media (min-width: 48em) {
+    margin-left: -90px;
+  }
+}
+
+.launch-teaser-text {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 20px;
+
+  @media (min-width: 48em) {
+    padding-top: 66px;
+  }
+}
+
+.launch-teaser-form {
+  margin-top: 20px;
+
+  @media (min-width: 48em) {
+    margin-top: 70px;
+  }
+}
+
+.launch-teaser-form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.launch-teaser-form-group {
+  margin-bottom: 32px;
+}
+
+.launch-teaser-form-group-hidden {
+  display: none;
+  visibility: hidden;
+
+  @media (min-width: 48em) {
+    display: block;
+  }
+}
+
+.launch-teaser-form-input {
+  .ff-gotham-pro;
+  display: inline-block;
+  width: 100%;
+  padding: 17px 25px;
+  background-color: rgba(179, 179, 179, 0.71);
+  font-size: 24px;
+  border: none;
+  box-shadow: none;
+
+  &:focus {
+    background-color: rgba(179, 179, 179, 1);
+  }
+}
+
+.launch-teaser-form-button {
+  .ff-gotham-pro;
+  display: inline-block;
+  width: 100%;
+  padding: 17px 25px;
+  background-color: @c-orange;
+  font-weight: bold;
+  font-size: 24px;
+  color: #fff;
+  border: none;
+  box-shadow: none;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: lighten(@c-orange, 5%);
+  }
+}

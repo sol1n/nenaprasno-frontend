@@ -27,6 +27,26 @@ gulp.task('less', function() {
         .pipe(gulp.dest('./build/'));
 });
 
+gulp.task('profilaktika-media-less', function() {
+    return gulp.src('./less/sites/profilaktika-media/style.less')
+        .pipe(sourcemaps.init())
+        .pipe(less().on('error', function(err) {
+            console.log(err);
+        }))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(cssmin().on('error', function(err) {
+            console.log(err);
+        }))
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./build/profilaktika-media'));
+});
+
 var jsFiles = [
         './node_modules/jquery/dist/jquery.js',
         './node_modules/bxslider/dist/jquery.bxslider.js',
@@ -51,7 +71,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(jsDest));
 });
 
-gulp.task('default', ['less', 'scripts'], function() {
-    gulp.watch('./less/**/*.less', ['less']);
+gulp.task('default', ['less', 'profilaktika-media-less', 'scripts'], function() {
+    gulp.watch('./less/**/*.less', ['less', 'profilaktika-media-less']);
     gulp.watch('./js/**/*.js', ['scripts']);
 });
