@@ -60,6 +60,14 @@ var jsFiles = [
     ],
     jsDest = './build';
 
+var profilaktikaMediajsFiles = [
+        './node_modules/jquery/dist/jquery.js',
+        './node_modules/inputmask//dist/jquery.inputmask.bundle.js',
+        './js/sites/profilaktika-media/components/**/*.js',
+        './js/sites/profilaktika-media/scripts.js'
+    ],
+    profilaktikaMediajsDest = './build/profilaktika-media';
+
 gulp.task('scripts', function() {
     return gulp.src(jsFiles)
         .pipe(sourcemaps.init())
@@ -71,7 +79,18 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest(jsDest));
 });
 
-gulp.task('default', ['less', 'profilaktika-media-less', 'scripts'], function() {
+gulp.task('profilaktika-media-scripts', function() {
+    return gulp.src(profilaktikaMediajsFiles)
+        .pipe(sourcemaps.init())
+        .pipe(concat('scripts.js'))
+        .pipe(gulp.dest(profilaktikaMediajsDest))
+        .pipe(rename('scripts.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(profilaktikaMediajsDest));
+});
+
+gulp.task('default', ['less', 'profilaktika-media-less', 'scripts', 'profilaktika-media-scripts'], function() {
     gulp.watch('./less/**/*.less', ['less', 'profilaktika-media-less']);
-    gulp.watch('./js/**/*.js', ['scripts']);
+    gulp.watch('./js/**/*.js', ['scripts', 'profilaktika-media-scripts']);
 });

@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="favicon.ico">
     <link rel="stylesheet" href="../../public/assets/build/profilaktika-media/style.min.css">
 </head>
-<body style="background: url('../../public/assets/images/profilactika-media/background.jpg') repeat center;">
+<body style="background: url('../../public/assets/images/profilaktika-media/background.jpg') repeat center;">
 
 <main class="main-content">
     <div class="launch-teaser-wrapper">
