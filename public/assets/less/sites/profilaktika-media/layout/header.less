@@ -27,6 +27,7 @@
 .main-header-menu {
   .ul-reset;
   display: none;
+  padding-right: 10px;
 
   @media (min-width: 48em) {
     display: block;
@@ -51,6 +52,30 @@
         color: @c-orange;
       }
     }
+
+    &.active {
+      a {
+        color: @c-orange;
+      }
+    }
+  }
+}
+
+.main-header-toggler {
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+
+  &:hover,
+  &:focus,
+  &.active {
+    svg {
+      fill: @c-orange;
+    }
+  }
+
+  @media (min-width: 48em) {
+    display: none;
   }
 }
 
@@ -78,7 +103,12 @@
 }
 
 .main-header-userarea {
+  display: none;
   padding-left: 20px;
+
+  @media (min-width: 48em) {
+    display: block;
+  }
 }
 
 .main-header-userarea-links {

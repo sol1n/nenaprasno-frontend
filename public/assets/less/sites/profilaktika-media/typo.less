@@ -8,4 +8,9 @@ body {
 
 a {
   color: @c-orange;
+
+  &:hover,
+  &:focus {
+    color: lighten(@c-orange, 5%);
+  }
 }
