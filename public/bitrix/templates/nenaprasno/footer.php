@@ -9,7 +9,6 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     <script src="/assets/build/scripts.js"></script>
     <? if (CSite::InDir('/screen/')): ?>
         <script src="/assets/screen/build/app.js"></script>
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
         <link rel="stylesheet" href="/assets/screen/css/nenaprasno-form.css">
         <link rel="stylesheet" href="/assets/screen/css/nenaprasno-form-1.css">
     <? else: ?>
