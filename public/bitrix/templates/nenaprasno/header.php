@@ -7,7 +7,7 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 
 		<?$APPLICATION->ShowHead();?>
 		<title><?$APPLICATION->ShowTitle();?></title>
-		<link rel="stylesheet" href="/assets/css/style.min.css">
+		<link rel="stylesheet" href="/assets/build/style.min.css">
 		<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /> 	
         <meta name="viewport" content="width=500">
         <link rel="canonical" href="<?=$APPLICATION->GetProperty("canonical", htmlspecialchars($_SERVER['SERVER_NAME']  . $_SERVER['REQUEST_URI']))?>"/>
@@ -43,13 +43,13 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
             </div>   
             <div class="main-header-right">
 				<div class="main-header-contacts phone-col">
-					<a href="tel:+78123163434"class="main-header-contacts-phone">
+					<a href="tel:+78123163434" class="main-header-contacts-phone">
 						<img src="/assets/images/call-answer.svg">
 						+7 812 316-34-34
 					</a>
 				</div>
 				<div class="main-header-contacts mail-col">
-					<a href="mailto:fond@nenaprasno.ru"class="main-header-contacts-email">
+					<a href="mailto:fond@nenaprasno.ru" class="main-header-contacts-email">
 						<img src="/assets/images/close-envelope.svg">
 						fond@nenaprasno.ru
 					</a>
