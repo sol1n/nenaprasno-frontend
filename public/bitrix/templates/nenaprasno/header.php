@@ -100,24 +100,24 @@ if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
     </header>
 
     <div id="offcanvas" class="main-offcanvas-overlay">
-        <div class="main-offcanvas-logo">
-            <a href="/">
-                <img height="60px;" src="/assets/images/logo.svg" alt="Фонд профилактики рака. Живу не напрасно.">
-            </a>
-        </div>
-
         <nav class="main-offcanvas">
-            <?$APPLICATION->IncludeComponent("bitrix:menu", "main-offcanvas-menu", Array("ROOT_MENU_TYPE" => "top"), false);?>
-        </nav>
-
-        <div class="main-offcanvas-user">
-            <div class="main-offcanvas-padding">
-                <a href="http://nenaprasno-cabinet.webglyphs.ru/login" class="main-offcanvas-user-login">
-                    Войти на сайт
-                </a>
-                <a href="http://nenaprasno-cabinet.webglyphs.ru/registration" class="main-offcanvas-user-registration">
-                    Зарегистрироваться
+            <div class="main-offcanvas-logo">
+                <a href="/">
+                    <img height="60px;" src="/assets/images/logo.svg" alt="Фонд профилактики рака. Живу не напрасно.">
                 </a>
             </div>
-        </div>
+            
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "main-offcanvas-menu", Array("ROOT_MENU_TYPE" => "top"), false);?>
+
+            <div class="main-offcanvas-user">
+                <div class="main-offcanvas-padding">
+                    <a href="http://nenaprasno-cabinet.webglyphs.ru/login" class="main-offcanvas-user-login">
+                        Войти на сайт
+                    </a>
+                    <a href="http://nenaprasno-cabinet.webglyphs.ru/registration" class="main-offcanvas-user-registration">
+                        Зарегистрироваться
+                    </a>
+                </div>
+            </div>
+        </nav>
     </div>
