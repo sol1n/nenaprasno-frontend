@@ -51,7 +51,7 @@ var jsFiles = [
         './node_modules/jquery/dist/jquery.js',
         './node_modules/bxslider/dist/jquery.bxslider.js',
         './node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
-        './node_modules/inputmask//dist/jquery.inputmask.bundle.js',
+        './node_modules/jquery-mask-plugin/dist/jquery.mask.js',
         './node_modules/flatpickr/dist/flatpickr.js',
         './node_modules/flatpickr/dist/l10n/ru.js',
         './node_modules/tippy.js/dist/tippy.js',

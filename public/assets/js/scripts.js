@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('[data-toggle]').toggler();
-    $(':input').inputmask();
+    $('[data-masked-input]').maskedinput();
     tippy('[data-tooltip]', {
         theme: 'light'
     });

@@ -90,7 +90,14 @@
                             <div class="col-xs-12 col-md-6">
                                 <div class="cabinet-profile-control">
                                     <label class="cabinet-profile-label">Мобильный телефон</label>
-                                    <input type="tel" class="form-input" placeholder="Введите телефон" data-inputmask="'mask': '+7 999 999-99-99'">
+                                    <input
+                                            type="tel"
+                                            class="form-input"
+                                            placeholder="Введите телефон"
+                                            data-masked-input="+7 (000) 000-00-00"
+                                            data-masked-input-placeholder="+7 (___) ___-__-__"
+                                            data-masked-input-clearifnotmatch
+                                    >
                                 </div>
                             </div>
                         </div>
