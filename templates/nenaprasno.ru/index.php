@@ -988,9 +988,7 @@
 
     <?php include "blocks/donate-block.php"; ?>
 </main>
-<footer class="main-footer">
-    &copy; Фонд профилактики рака, 2017
-</footer>
+<?php include "blocks/footer.php"; ?>
 <script src="../../public/assets/build/scripts.js"></script>
 </body>
 </html>
