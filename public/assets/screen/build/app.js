@@ -60,7 +60,7 @@
 	
 	// Store
 	var formStore = __webpack_require__(151),
-	    Cookies = __webpack_require__(152);
+	    Cookies = __webpack_require__(153);
 	
 	var app = new Vue({
 	    el: "#app",
@@ -141,8 +141,17 @@
 	            this.initSessionStorage(formId);
 	
 	            this.auth().then(function () {
+	                if (!_this3.$store.state.user.isAnonymous) {
+	                    return _this3.$store.dispatch('fetchUserProfile');
+	                }
+	            }).then(function () {
+	                if (!_this3.$store.state.user.isAnonymous) {
+	                    return _this3.$store.dispatch('fetchRegions');
+	                }
+	            }).then(function () {
 	                return _this3.$store.dispatch('fetchForm', formId);
 	            }).then(function (res) {
+	                console.log('Parsing form data...');
 	                _this3.formData = res.data;
 	                _this3.$store.dispatch('parseFormData', res.data);
 	            }).catch(function (e) {
@@ -15174,11 +15183,11 @@
 	  /* template */
 	  __webpack_require__(145),
 	  /* scopeId */
-	  "data-v-cf31ea06",
+	  "data-v-680d33ee",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-app.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-app.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-app.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -15189,9 +15198,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-cf31ea06", Component.options)
+	    hotAPI.createRecord("data-v-680d33ee", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-cf31ea06", Component.options)
+	    hotAPI.reload("data-v-680d33ee", Component.options)
 	  }
 	})()}
 	
@@ -15209,13 +15218,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("146b2867", content, false);
+	var update = __webpack_require__(40)("36e5f87a", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cf31ea06&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-app.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cf31ea06&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-app.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-680d33ee&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-app.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-680d33ee&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-app.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -15706,11 +15715,11 @@
 	  /* template */
 	  __webpack_require__(48),
 	  /* scopeId */
-	  "data-v-6b8a6e2c",
+	  "data-v-7af5161d",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-breadcrumbs.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-breadcrumbs.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-breadcrumbs.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -15721,9 +15730,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6b8a6e2c", Component.options)
+	    hotAPI.createRecord("data-v-7af5161d", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-6b8a6e2c", Component.options)
+	    hotAPI.reload("data-v-7af5161d", Component.options)
 	  }
 	})()}
 	
@@ -15741,13 +15750,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("1ba900aa", content, false);
+	var update = __webpack_require__(40)("33a9e946", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6b8a6e2c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-breadcrumbs.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6b8a6e2c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-breadcrumbs.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7af5161d&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-breadcrumbs.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7af5161d&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-breadcrumbs.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -15855,7 +15864,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-6b8a6e2c", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-7af5161d", module.exports)
 	  }
 	}
 
@@ -15873,11 +15882,11 @@
 	  /* template */
 	  __webpack_require__(114),
 	  /* scopeId */
-	  "data-v-7851e6c7",
+	  "data-v-c51e4814",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-part.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-part.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-part.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -15888,9 +15897,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7851e6c7", Component.options)
+	    hotAPI.createRecord("data-v-c51e4814", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-7851e6c7", Component.options)
+	    hotAPI.reload("data-v-c51e4814", Component.options)
 	  }
 	})()}
 	
@@ -15908,13 +15917,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("0e965e0c", content, false);
+	var update = __webpack_require__(40)("070bd40f", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7851e6c7&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-part.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7851e6c7&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-part.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-c51e4814&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-part.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-c51e4814&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-part.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16453,11 +16462,11 @@
 	  /* template */
 	  __webpack_require__(113),
 	  /* scopeId */
-	  "data-v-7127e87e",
+	  "data-v-d5fb579c",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-section.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-section.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-section.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -16468,9 +16477,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7127e87e", Component.options)
+	    hotAPI.createRecord("data-v-d5fb579c", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-7127e87e", Component.options)
+	    hotAPI.reload("data-v-d5fb579c", Component.options)
 	  }
 	})()}
 	
@@ -16488,13 +16497,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("42c3e8a0", content, false);
+	var update = __webpack_require__(40)("dda84f8e", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7127e87e&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-section.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7127e87e&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-section.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-d5fb579c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-section.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-d5fb579c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-section.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16564,11 +16573,11 @@
 	  /* template */
 	  __webpack_require__(112),
 	  /* scopeId */
-	  "data-v-b00af14a",
+	  "data-v-26ba380c",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-group.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-group.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-group.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -16579,9 +16588,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-b00af14a", Component.options)
+	    hotAPI.createRecord("data-v-26ba380c", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-b00af14a", Component.options)
+	    hotAPI.reload("data-v-26ba380c", Component.options)
 	  }
 	})()}
 	
@@ -16599,13 +16608,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("66f24c46", content, false);
+	var update = __webpack_require__(40)("15a85d81", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-b00af14a&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-group.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-b00af14a&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-group.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-26ba380c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-group.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-26ba380c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-group.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16675,11 +16684,11 @@
 	  /* template */
 	  __webpack_require__(111),
 	  /* scopeId */
-	  "data-v-3eebf639",
+	  "data-v-0c823eaa",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-control.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-control.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-control.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -16690,9 +16699,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-3eebf639", Component.options)
+	    hotAPI.createRecord("data-v-0c823eaa", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-3eebf639", Component.options)
+	    hotAPI.reload("data-v-0c823eaa", Component.options)
 	  }
 	})()}
 	
@@ -16710,13 +16719,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("3b00302d", content, false);
+	var update = __webpack_require__(40)("65fa6fa7", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3eebf639&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-control.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3eebf639&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-control.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-0c823eaa&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-control.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-0c823eaa&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-control.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -16989,11 +16998,11 @@
 	  /* template */
 	  __webpack_require__(74),
 	  /* scopeId */
-	  "data-v-6b42290a",
+	  "data-v-79311a2c",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-radioButtons.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-radioButtons.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-radioButtons.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17004,9 +17013,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6b42290a", Component.options)
+	    hotAPI.createRecord("data-v-79311a2c", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-6b42290a", Component.options)
+	    hotAPI.reload("data-v-79311a2c", Component.options)
 	  }
 	})()}
 	
@@ -17024,13 +17033,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("32b7b9a0", content, false);
+	var update = __webpack_require__(40)("4730fc3f", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6b42290a&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-radioButtons.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6b42290a&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-radioButtons.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-79311a2c&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-radioButtons.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-79311a2c&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-radioButtons.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17138,7 +17147,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-6b42290a", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-79311a2c", module.exports)
 	  }
 	}
 
@@ -17156,11 +17165,11 @@
 	  /* template */
 	  __webpack_require__(79),
 	  /* scopeId */
-	  "data-v-ba731b8a",
+	  "data-v-1145adac",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-textBlock.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-textBlock.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-textBlock.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17171,9 +17180,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-ba731b8a", Component.options)
+	    hotAPI.createRecord("data-v-1145adac", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-ba731b8a", Component.options)
+	    hotAPI.reload("data-v-1145adac", Component.options)
 	  }
 	})()}
 	
@@ -17191,13 +17200,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("31e3300a", content, false);
+	var update = __webpack_require__(40)("395de36c", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-ba731b8a&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBlock.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-ba731b8a&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBlock.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1145adac&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBlock.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1145adac&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBlock.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17265,7 +17274,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-ba731b8a", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-1145adac", module.exports)
 	  }
 	}
 
@@ -17283,11 +17292,11 @@
 	  /* template */
 	  __webpack_require__(84),
 	  /* scopeId */
-	  "data-v-51526c0e",
+	  "data-v-6ebc70a8",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-textBox.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-textBox.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-textBox.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17298,9 +17307,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-51526c0e", Component.options)
+	    hotAPI.createRecord("data-v-6ebc70a8", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-51526c0e", Component.options)
+	    hotAPI.reload("data-v-6ebc70a8", Component.options)
 	  }
 	})()}
 	
@@ -17318,13 +17327,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("0dc2d037", content, false);
+	var update = __webpack_require__(40)("af6f821c", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-51526c0e&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBox.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-51526c0e&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBox.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6ebc70a8&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBox.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6ebc70a8&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-textBox.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17415,7 +17424,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-51526c0e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-6ebc70a8", module.exports)
 	  }
 	}
 
@@ -17433,11 +17442,11 @@
 	  /* template */
 	  __webpack_require__(89),
 	  /* scopeId */
-	  "data-v-4e78a39c",
+	  "data-v-4f854a6a",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-numberInput.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-numberInput.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-numberInput.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17448,9 +17457,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-4e78a39c", Component.options)
+	    hotAPI.createRecord("data-v-4f854a6a", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-4e78a39c", Component.options)
+	    hotAPI.reload("data-v-4f854a6a", Component.options)
 	  }
 	})()}
 	
@@ -17468,13 +17477,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("4379343e", content, false);
+	var update = __webpack_require__(40)("3e3ed508", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4e78a39c&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-numberInput.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4e78a39c&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-numberInput.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4f854a6a&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-numberInput.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4f854a6a&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-numberInput.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17563,7 +17572,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-4e78a39c", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-4f854a6a", module.exports)
 	  }
 	}
 
@@ -17581,11 +17590,11 @@
 	  /* template */
 	  __webpack_require__(94),
 	  /* scopeId */
-	  "data-v-cf4a6084",
+	  "data-v-4947d3a2",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-dateTimePicker.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-dateTimePicker.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-dateTimePicker.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17596,9 +17605,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-cf4a6084", Component.options)
+	    hotAPI.createRecord("data-v-4947d3a2", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-cf4a6084", Component.options)
+	    hotAPI.reload("data-v-4947d3a2", Component.options)
 	  }
 	})()}
 	
@@ -17616,13 +17625,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("86def23e", content, false);
+	var update = __webpack_require__(40)("f37d5aba", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cf4a6084&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-dateTimePicker.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-cf4a6084&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-dateTimePicker.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4947d3a2&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-dateTimePicker.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-4947d3a2&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-dateTimePicker.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17703,7 +17712,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-cf4a6084", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-4947d3a2", module.exports)
 	  }
 	}
 
@@ -17721,11 +17730,11 @@
 	  /* template */
 	  __webpack_require__(99),
 	  /* scopeId */
-	  "data-v-bed7e7d0",
+	  "data-v-1439896e",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-checkBox.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-checkBox.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-checkBox.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17736,9 +17745,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-bed7e7d0", Component.options)
+	    hotAPI.createRecord("data-v-1439896e", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-bed7e7d0", Component.options)
+	    hotAPI.reload("data-v-1439896e", Component.options)
 	  }
 	})()}
 	
@@ -17756,13 +17765,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("314f3495", content, false);
+	var update = __webpack_require__(40)("52825e8c", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-bed7e7d0&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBox.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-bed7e7d0&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBox.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1439896e&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBox.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1439896e&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBox.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -17869,7 +17878,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-bed7e7d0", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-1439896e", module.exports)
 	  }
 	}
 
@@ -17887,11 +17896,11 @@
 	  /* template */
 	  __webpack_require__(104),
 	  /* scopeId */
-	  "data-v-5b32e1d6",
+	  "data-v-0a051087",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-checkBoxList.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-checkBoxList.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-checkBoxList.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -17902,9 +17911,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5b32e1d6", Component.options)
+	    hotAPI.createRecord("data-v-0a051087", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-5b32e1d6", Component.options)
+	    hotAPI.reload("data-v-0a051087", Component.options)
 	  }
 	})()}
 	
@@ -17922,13 +17931,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("09c0f62d", content, false);
+	var update = __webpack_require__(40)("50152657", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5b32e1d6&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBoxList.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5b32e1d6&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBoxList.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-0a051087&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBoxList.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-0a051087&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-checkBoxList.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -18057,7 +18066,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-5b32e1d6", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-0a051087", module.exports)
 	  }
 	}
 
@@ -18075,11 +18084,11 @@
 	  /* template */
 	  __webpack_require__(110),
 	  /* scopeId */
-	  "data-v-6060bcd2",
+	  "data-v-94a027fa",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/controls/form-comboBox.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/controls/form-comboBox.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-comboBox.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -18090,9 +18099,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6060bcd2", Component.options)
+	    hotAPI.createRecord("data-v-94a027fa", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-6060bcd2", Component.options)
+	    hotAPI.reload("data-v-94a027fa", Component.options)
 	  }
 	})()}
 	
@@ -18110,13 +18119,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("6819c40a", content, false);
+	var update = __webpack_require__(40)("60095e91", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6060bcd2&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-comboBox.vue", function() {
-	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6060bcd2&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-comboBox.vue");
+	   module.hot.accept("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-94a027fa&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-comboBox.vue", function() {
+	     var newContent = require("!!../../../node_modules/css-loader/index.js?sourceMap!../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-94a027fa&scoped=true!../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-comboBox.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -18562,7 +18571,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-6060bcd2", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-94a027fa", module.exports)
 	  }
 	}
 
@@ -18586,7 +18595,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-3eebf639", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-0c823eaa", module.exports)
 	  }
 	}
 
@@ -18613,7 +18622,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-b00af14a", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-26ba380c", module.exports)
 	  }
 	}
 
@@ -18640,7 +18649,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7127e87e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-d5fb579c", module.exports)
 	  }
 	}
 
@@ -18695,7 +18704,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7851e6c7", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-c51e4814", module.exports)
 	  }
 	}
 
@@ -18713,11 +18722,11 @@
 	  /* template */
 	  __webpack_require__(119),
 	  /* scopeId */
-	  "data-v-2920b21e",
+	  "data-v-44a60c60",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-result.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-result.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-result.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -18728,9 +18737,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2920b21e", Component.options)
+	    hotAPI.createRecord("data-v-44a60c60", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-2920b21e", Component.options)
+	    hotAPI.reload("data-v-44a60c60", Component.options)
 	  }
 	})()}
 	
@@ -18748,13 +18757,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("7f63c0ae", content, false);
+	var update = __webpack_require__(40)("55efb950", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2920b21e&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-result.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2920b21e&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-result.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-44a60c60&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-result.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-44a60c60&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-result.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -18990,7 +18999,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-2920b21e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-44a60c60", module.exports)
 	  }
 	}
 
@@ -19012,7 +19021,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-submit-auth-modal.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-submit-auth-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-submit-auth-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -19023,9 +19032,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-bc19720e", Component.options)
+	    hotAPI.createRecord("data-v-117b13ac", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-bc19720e", Component.options)
+	    hotAPI.reload("data-v-117b13ac", Component.options)
 	  }
 	})()}
 	
@@ -19043,13 +19052,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("3a065328", content, false);
+	var update = __webpack_require__(40)("4d3dcbe2", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-bc19720e!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-submit-auth-modal.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-bc19720e!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-submit-auth-modal.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-117b13ac!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-submit-auth-modal.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-117b13ac!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-submit-auth-modal.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -19581,7 +19590,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/social-auth.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/social-auth.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] social-auth.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -19592,9 +19601,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-380bf8b3", Component.options)
+	    hotAPI.createRecord("data-v-dd7b43bc", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-380bf8b3", Component.options)
+	    hotAPI.reload("data-v-dd7b43bc", Component.options)
 	  }
 	})()}
 	
@@ -19770,7 +19779,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-380bf8b3", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-dd7b43bc", module.exports)
 	  }
 	}
 
@@ -20003,7 +20012,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-bc19720e", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-117b13ac", module.exports)
 	  }
 	}
 
@@ -20025,7 +20034,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-auth-modal.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-auth-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-auth-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -20036,9 +20045,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-f143bcc8", Component.options)
+	    hotAPI.createRecord("data-v-2a1390ea", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-f143bcc8", Component.options)
+	    hotAPI.reload("data-v-2a1390ea", Component.options)
 	  }
 	})()}
 	
@@ -20056,13 +20065,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("8b45a8c8", content, false);
+	var update = __webpack_require__(40)("e51dc550", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f143bcc8!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-auth-modal.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f143bcc8!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-auth-modal.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2a1390ea!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-auth-modal.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2a1390ea!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-auth-modal.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -20320,7 +20329,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-f143bcc8", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-2a1390ea", module.exports)
 	  }
 	}
 
@@ -20342,7 +20351,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-profile-modal.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-profile-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-profile-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -20353,9 +20362,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-34aded65", Component.options)
+	    hotAPI.createRecord("data-v-140e5d16", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-34aded65", Component.options)
+	    hotAPI.reload("data-v-140e5d16", Component.options)
 	  }
 	})()}
 	
@@ -20373,13 +20382,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("de3f612e", content, false);
+	var update = __webpack_require__(40)("23f55d5a", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-34aded65!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-profile-modal.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-34aded65!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-profile-modal.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-140e5d16!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-profile-modal.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-140e5d16!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-profile-modal.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -20407,8 +20416,6 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	//
 	//
@@ -20525,7 +20532,7 @@
 	
 	module.exports = {
 	    data: function data() {
-	        return _defineProperty({
+	        return {
 	            user: {
 	                name: '',
 	                middlename: '',
@@ -20536,10 +20543,10 @@
 	            },
 	            oldPassword: null,
 	            newPassword: null,
-	            progress: false,
 	            submitProfileError: null,
-	            submitPasswordError: null
-	        }, 'progress', false);
+	            submitPasswordError: null,
+	            progress: false
+	        };
 	    },
 	
 	    computed: {
@@ -20962,7 +20969,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-34aded65", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-140e5d16", module.exports)
 	  }
 	}
 
@@ -20980,7 +20987,7 @@
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-success-modal.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-success-modal.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-success-modal.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -20991,9 +20998,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-e0600982", Component.options)
+	    hotAPI.createRecord("data-v-6f306af0", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-e0600982", Component.options)
+	    hotAPI.reload("data-v-6f306af0", Component.options)
 	  }
 	})()}
 	
@@ -21060,7 +21067,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-e0600982", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-6f306af0", module.exports)
 	  }
 	}
 
@@ -21116,7 +21123,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-cf31ea06", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-680d33ee", module.exports)
 	  }
 	}
 
@@ -21134,11 +21141,11 @@
 	  /* template */
 	  __webpack_require__(150),
 	  /* scopeId */
-	  "data-v-6d00292c",
+	  "data-v-5232eedb",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "/Users/alexey/PhpstormProjects/Ne_naprasno_frontend_js/app/components/form-userarea.vue"
+	Component.options.__file = "/Users/alexey/PhpstormProjects/nenaprasno-frontend/public/assets/screen/app/components/form-userarea.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] form-userarea.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -21149,9 +21156,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-6d00292c", Component.options)
+	    hotAPI.createRecord("data-v-5232eedb", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-6d00292c", Component.options)
+	    hotAPI.reload("data-v-5232eedb", Component.options)
 	  }
 	})()}
 	
@@ -21169,13 +21176,13 @@
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(40)("3c6536f1", content, false);
+	var update = __webpack_require__(40)("f8bca206", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6d00292c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-userarea.vue", function() {
-	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-6d00292c&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-userarea.vue");
+	   module.hot.accept("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5232eedb&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-userarea.vue", function() {
+	     var newContent = require("!!../../node_modules/css-loader/index.js?sourceMap!../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5232eedb&scoped=true!../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./form-userarea.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -21327,7 +21334,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-6d00292c", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-5232eedb", module.exports)
 	  }
 	}
 
@@ -21340,6 +21347,10 @@
 	var Vuex = __webpack_require__(5);
 	var userAPI = __webpack_require__(125);
 	var formAPI = __webpack_require__(56);
+	var objectAPI = __webpack_require__(152);
+	
+	// Helpers
+	var fillUserFields = __webpack_require__(154);
 	
 	module.exports = new Vuex.Store({
 	    state: {
@@ -21375,8 +21386,15 @@
 	        },
 	        userProfile: {
 	            username: null,
-	            data: null
-	        }
+	            data: {
+	                id: null,
+	                sex: null,
+	                city: null,
+	                regionId: null,
+	                birthdate: null
+	            }
+	        },
+	        regions: []
 	    },
 	    mutations: {
 	        setTotalParts: function setTotalParts(state, n) {
@@ -21408,6 +21426,9 @@
 	            if (!foundControls) {
 	                state.form.resultData.push(control);
 	            }
+	        },
+	        addRegions: function addRegions(state, regions) {
+	            state.regions = regions;
 	        },
 	        setControlValue: function setControlValue(state, payload) {
 	            state.form.data.forEach(function (c) {
@@ -21512,6 +21533,30 @@
 	                });
 	            });
 	        },
+	        fetchUserProfile: function fetchUserProfile(context) {
+	            return new Promise(function (resolve, reject) {
+	                objectAPI.objectsBySchemaIdGet('UserProfiles', {
+	                    where: {
+	                        userId: context.state.user.userId
+	                    }
+	                }, context.state.user.sessionId).then(function (response) {
+	                    context.commit('setUserProfileData', response.data[0]);
+	                    resolve();
+	                }).catch(function (e) {
+	                    reject(e);
+	                });
+	            });
+	        },
+	        fetchRegions: function fetchRegions(context) {
+	            return new Promise(function (resolve, reject) {
+	                objectAPI.objectsBySchemaIdGet('Region', {}, context.state.user.sessionId).then(function (response) {
+	                    context.commit('addRegions', response.data);
+	                    resolve();
+	                }).catch(function (e) {
+	                    reject(e);
+	                });
+	            });
+	        },
 	        parseFormData: function parseFormData(context, formData) {
 	            // Count Parts in Form
 	            context.commit('setTotalParts', formData.parts.length);
@@ -21537,6 +21582,7 @@
 	                            group.controls.forEach(function (control) {
 	                                var newControl = {
 	                                    controlId: control.id,
+	                                    controlClass: control.class,
 	                                    controlTitle: control.title,
 	                                    controlType: control.type,
 	                                    display: false,
@@ -21549,6 +21595,9 @@
 	                                if (control.options) {
 	                                    newControl.options = control.options;
 	                                }
+	
+	                                // Prefill user fields from cabinet
+	                                fillUserFields(newControl, context);
 	
 	                                if (isResultPart) {
 	                                    context.commit('addResultControl', newControl);
@@ -21585,6 +21634,46 @@
 
 /***/ }),
 /* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	var config = __webpack_require__(10);
+	var axios = __webpack_require__(11);
+	
+	var instance = axios.create({
+	    baseURL: config.apiUrl,
+	    timeout: 10000,
+	    headers: {
+	        "Content-Type": "application/json",
+	        "Accept": "application/json"
+	    }
+	});
+	
+	var object = {
+	    objectsBySchemaIdGet: function objectsBySchemaIdGet(schemaId, params, token) {
+	        return instance.get('/objects/' + schemaId, {
+	            params: params,
+	            headers: {
+	                "Content-Type": "application/json",
+	                "X-Appercode-Session-Token": token
+	            }
+	        });
+	    },
+	    objectsBySchemaIdPost: function objectsBySchemaIdPost(schemaId, newObj, token) {
+	        return instance.post('/objects/' + schemaId, newObj, {
+	            headers: {
+	                "Content-Type": "application/json",
+	                "X-Appercode-Session-Token": token
+	            }
+	        });
+	    }
+	};
+	
+	module.exports = object;
+
+/***/ }),
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21753,6 +21842,57 @@
 	
 		return init(function () {});
 	});
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	function fillUserFields(control, store) {
+	    var sexFieldName = "t1-p1-s1-g1-c1";
+	    var regionFieldName = "reg1";
+	    var ageFieldName = "t1-p3-s2-g1-c1";
+	
+	    if (control.controlId === sexFieldName) {
+	        store.commit('setControlValue', {
+	            id: control.controlId,
+	            value: store.state.userProfile.data.sex
+	        });
+	
+	        console.log("Sex set as: " + control.value);
+	    }
+	    if (control.controlId === regionFieldName) {
+	        if (store.state.userProfile.data.regionId) {
+	            var foundRegion = store.state.regions.find(function (region) {
+	                return region.id === store.state.userProfile.data.regionId;
+	            });
+	            store.commit('setControlValue', {
+	                id: control.controlId,
+	                value: foundRegion ? foundRegion.value : null
+	            });
+	
+	            console.log("Region set as: " + foundRegion.title + " " + foundRegion.value);
+	        }
+	    }
+	
+	    if (control.controlId === ageFieldName) {
+	        var bdate = store.state.userProfile.data.birthdate;
+	        if (bdate) {
+	            var ageDifMs = Date.now() - new Date(bdate).getTime();
+	            var ageDate = new Date(ageDifMs); // miliseconds from epoch;
+	            var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+	            store.commit('setControlValue', {
+	                id: control.controlId,
+	                value: age
+	            });
+	
+	            console.log("Age set as: " + age);
+	        }
+	    }
+	}
+	
+	module.exports = fillUserFields;
 
 /***/ })
 /******/ ]);

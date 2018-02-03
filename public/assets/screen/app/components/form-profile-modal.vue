@@ -124,7 +124,6 @@
                 },
                 oldPassword: null,
                 newPassword: null,
-                progress: false,
                 submitProfileError: null,
                 submitPasswordError: null,
                 progress: false

@@ -1,6 +1,10 @@
 const Vuex = require('vuex');
 const userAPI = require('./api/user');
 const formAPI = require('./api/form');
+const objectAPI = require('./api/object');
+
+// Helpers
+const fillUserFields = require('./helpers/fillUserFields');
 
 module.exports = new Vuex.Store({
     state: {
@@ -36,8 +40,15 @@ module.exports = new Vuex.Store({
         },
         userProfile: {
             username: null,
-            data: null
-        }
+            data: {
+                id: null,
+                sex: null,
+                city: null,
+                regionId: null,
+                birthdate: null
+            }
+        },
+        regions: []
     },
     mutations: {
         setTotalParts(state, n) {
@@ -69,6 +80,9 @@ module.exports = new Vuex.Store({
             if (!foundControls) {
                 state.form.resultData.push(control);
             }
+        },
+        addRegions(state, regions) {
+            state.regions = regions;
         },
         setControlValue(state, payload) {
             state.form.data.forEach(function (c) {
@@ -179,6 +193,42 @@ module.exports = new Vuex.Store({
                     });
             });
         },
+        fetchUserProfile(context) {
+            return new Promise((resolve, reject) => {
+                objectAPI.objectsBySchemaIdGet(
+                    'UserProfiles',
+                    {
+                        where: {
+                            userId: context.state.user.userId
+                        }
+                    },
+                    context.state.user.sessionId
+                    )
+                    .then(response => {
+                        context.commit('setUserProfileData', response.data[0]);
+                        resolve();
+                    })
+                    .catch(e => {
+                        reject(e);
+                    });
+            });
+        },
+        fetchRegions(context) {
+            return new Promise((resolve, reject) => {
+                objectAPI.objectsBySchemaIdGet(
+                    'Region',
+                    {},
+                    context.state.user.sessionId
+                    )
+                    .then(response => {
+                        context.commit('addRegions', response.data);
+                        resolve();
+                    })
+                    .catch(e => {
+                        reject(e);
+                    });
+            });
+        },
         parseFormData(context, formData) {
             // Count Parts in Form
             context.commit('setTotalParts', formData.parts.length);
@@ -202,6 +252,7 @@ module.exports = new Vuex.Store({
                             group.controls.forEach(function (control) {
                                 let newControl = {
                                     controlId: control.id,
+                                    controlClass: control.class,
                                     controlTitle: control.title,
                                     controlType: control.type,
                                     display: false,
@@ -214,6 +265,9 @@ module.exports = new Vuex.Store({
                                 if (control.options) {
                                     newControl.options = control.options;
                                 }
+
+                                // Prefill user fields from cabinet
+                                fillUserFields(newControl, context);
 
                                 if (isResultPart) {
                                     context.commit('addResultControl', newControl);

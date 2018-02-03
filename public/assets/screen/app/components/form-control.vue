@@ -79,7 +79,7 @@
         },
         watch: {
             value: function(val, oldVal) {
-                console.log(val, oldVal)
+                console.log(val, oldVal);
                 if (oldVal !== val) {
                     this.validate();
 

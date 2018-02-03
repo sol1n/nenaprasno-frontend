@@ -91,12 +91,24 @@ let app = new Vue({
 
             this.auth()
                 .then(() => {
+                    if (!this.$store.state.user.isAnonymous) {
+                        return this.$store.dispatch('fetchUserProfile')
+                    }
+                })
+                .then(() => {
+                    if (!this.$store.state.user.isAnonymous) {
+                        return this.$store.dispatch('fetchRegions');
+                    }
+                })
+                .then(() => {
                     return this.$store.dispatch('fetchForm', formId);
                 })
                 .then(res => {
+                    console.log('Parsing form data...');
                     this.formData = res.data;
                     this.$store.dispatch('parseFormData', res.data);
-                }).catch(e => {
+                })
+                .catch(e => {
                     if (e.response && e.response.status === 401) {
                         this.$store.dispatch('loginByToken')
                             .then(() => {
