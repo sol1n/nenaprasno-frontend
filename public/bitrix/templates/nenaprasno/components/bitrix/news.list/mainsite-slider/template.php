@@ -4,7 +4,9 @@
             <? $img = CFile::GetPath($item['PREVIEW_PICTURE']['ID']); ?>
             <? if ($item['PROPERTIES']['LINK']['VALUE']): ?>
                 <a href="<?=$item['PROPERTIES']['LINK']['VALUE']?>">
-                    <div class="header-slider-item" style="background-image: url('<?=$img?>');"></div>
+                    <div class="header-slider-item <?=$item['PROPERTIES']['CLASSES']['VALUE']?>" style="background-image: url('<?=$img?>');">
+                        <?=$item['DETAIL_TEXT']?>
+                    </div>
                 </a>
             <? else: ?>
                 <div class="header-slider-item" style="background-image: url('<?=$img?>');"></div>
