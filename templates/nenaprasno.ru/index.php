@@ -14,8 +14,12 @@
 <main class="main-content">
     <section class="header-slider-wrapper">
         <div class="header-slider js-header-slider">
-            <div class="header-slider-item" style="background-image: url('../../public/assets/images/slider/slider-image-2.jpg');"></div>
-            <div class="header-slider-item" style="background-image: url('../../public/assets/images/slider/slider-image-1.jpg');"></div>
+            <div class="header-slider-item header-slider-item-screen" style="background-image: url('../../public/assets/images/slider/screen2.0/blue-bg.svg');">
+                <img class="animated fadeIn" src="../../public/assets/images/slider/screen2.0/logo.svg" alt="Screen 2.0">
+            </div>
+            <div class="header-slider-item header-slider-item-vsho" style="background-image: url('../../public/assets/images/slider/vsho/orange-bg.svg');">
+                <img class="animated fadeIn" src="../../public/assets/images/slider/vsho/logo.svg" alt="Высшая школа онкологии Ненапрасно">
+            </div>
         </div>
 
         <a href="#" class="header-slider-prev js-header-slider-prev">
@@ -62,7 +66,7 @@
             </div>
 
             <div class="header-slider-about-mobile">
-                <a href="#" class="button button-orange button-round">Пройти тест</a>
+                <a href="#" class="button button-orange button-round">Пройти тест Screen</a>
             </div>
         </div>
     </section>
