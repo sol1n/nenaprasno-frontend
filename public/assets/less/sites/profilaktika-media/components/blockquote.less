@@ -1,0 +1,41 @@
+.blockquote {
+  position: relative;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin-left: 0;
+  margin-right: 0;
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    background-image: url("../../images/profilaktika-media/icon-blockquote-left.svg");
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    background-image: url("../../images/profilaktika-media/icon-blockquote-right.svg");
+  }
+
+  @media (max-width: 767px) {
+    padding-left: 30px;
+    padding-right: 30px;
+
+    &::before,
+    &::after {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
