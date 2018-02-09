@@ -15,26 +15,22 @@
 <main class="main-content m-t-lg m-b-lg">
     <div class="wrapper">
         <article class="article-block article-block-wrapper">
-            <h1 class="article-block-title">
-                В России появится первый просветительский медиапроект о профилактике рака
-            </h1>
 
-            <div class="article-block-short-desc">
-                Фонд профилактики рака «Не напрасно» выиграл президентский
-                грант на создание просветительского медиапроекта о доказательной
-                медицине и онкологии Profilktika.Media.
+            <div class="article-block-preview m-b-lg">
+                <img src="../../public/assets/images/profilaktika-media/tmp/soft_flower-wallpaper-1920x1080.jpg" class="article-block-preview-image" alt="">
+
+                <div class="article-block-preview-text">
+                    <h1 class="article-block-preview-title">
+                        В России появится первый просветительский медиапроект о профилактике рака
+                    </h1>
+                    <div class="article-block-preview-desc">
+                        Фонд профилактики рака «Не напрасно» выиграл президентский грант на создание просветительского медиапроекта о доказательной медицине и онкологии Profilktika.Media.
+                    </div>
+                    <div class="article-block-preview-views">
+                        1 354
+                    </div>
+                </div>
             </div>
-
-            <div class="article-block-views">
-                1 354
-            </div>
-
-            <figure>
-                <img src="../../public/assets/images/profilaktika-media/tmp/profilaktika-media-staff.jpg" alt="">
-                <figcaption>
-                    Новое поколение врачей-онкологов
-                </figcaption>
-            </figure>
 
             <strong>Что такое профилактика рака</strong>
 
