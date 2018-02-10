@@ -8,6 +8,10 @@
             <img src="../../public/assets/images/profilaktika-media/logo.svg" alt="Profilaktika Media — Ненапрасно" width="230">
         </a>
 
+        <a href="index.php" class="main-header-logo-mobile">
+            <img src="../../public/assets/images/profilaktika-media/logo-mobile.svg" alt="Profilaktika Media — Ненапрасно" width="120">
+        </a>
+
         <ul class="main-header-menu">
             <li>
                 <a href="#">Кейсы</a>
@@ -41,6 +45,15 @@
                 <br>
                 <a href="#">Регистрация</a>
             </div>
+        </div>
+
+        <div class="main-header-right-mobile">
+            <a href="#" class="main-header-search-toggle">
+                <?php include "../../public/assets/images/profilaktika-media/icon-search.svg"; ?>
+            </a>
+            <a href="#" class="main-header-user-toggle">
+                <?php include "../../public/assets/images/profilaktika-media/icon-lock.svg"; ?>
+            </a>
         </div>
     </div>
 </header>

@@ -1,6 +1,6 @@
 .article-block {
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 20px;
 
   figure {
     .figure;
@@ -10,9 +10,9 @@
     .blockquote;
   }
 
-  @media (max-width: 767px) {
-    font-size: 14px;
-    line-height: 20px;
+  @media (min-width: 48em) {
+    font-size: 18px;
+    line-height: 26px;
   }
 }
 
@@ -21,10 +21,15 @@
 }
 
 .article-block-title {
-  font-size: 34px;
-  line-height: 38px;
+  font-size: 24px;
+  line-height: 30px;
   font-weight: bold;
   margin-top: 0;
+
+  @media (min-width: 48em) {
+    font-size: 34px;
+    line-height: 38px;
+  }
 }
 
 .article-block-views {
@@ -48,20 +53,25 @@
 .article-block-short-desc {
   color: @c-orange;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 15px;
+  line-height: 20px;
   margin-bottom: 15px;
+
+  @media (min-width: 48em) {
+    font-size: 18px;
+    line-height: 26px;
+  }
 }
 
 .article-block-highlight {
   color: @c-orange;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 32px;
+  font-size: 20px;
+  line-height: 28px;
 
-  @media (max-width: 767px) {
-    font-size: 20px;
-    line-height: 28px;
+  @media (min-width: 48em) {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 
@@ -132,7 +142,9 @@
   position: relative;
   color: #fff;
   background-color: #cecece;
-  padding: 300px 25px 25px;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 100px 15px 15px;
 
   &::after {
     content: '';
@@ -145,10 +157,10 @@
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.55));
   }
 
-  @media (max-width: 767px) {
-    margin-left: -15px;
-    margin-right: -15px;
-    padding: 100px 15px 15px;
+  @media (min-width: 48em) {
+    padding: 300px 25px 25px;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -167,23 +179,25 @@
 }
 
 .article-block-preview-title {
-  font-size: 34px;
-  line-height: 38px;
+  font-size: 24px;
+  line-height: 28px;
   margin-top: 0;
 
-  @media (max-width: 767px) {
-    font-size: 24px;
-    line-height: 28px;
+  @media (min-width: 48em) {
+    font-size: 34px;
+    line-height: 38px;
   }
 }
 
 .article-block-preview-desc {
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 20px;
 
-  @media (max-width: 767px) {
-    font-size: 14px;
-    line-height: 20px;
+
+  @media (min-width: 48em) {
+    font-size: 18px;
+    line-height: 24px;
   }
 }
 

@@ -1,7 +1,7 @@
 .blockquote {
   position: relative;
-  padding-right: 60px;
-  padding-left: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
   margin-left: 0;
   margin-right: 0;
 
@@ -10,8 +10,8 @@
     content: '';
     display: inline-block;
     position: absolute;
-    width: 36px;
-    height: 36px;
+    width: 16px;
+    height: 16px;
     background-repeat: no-repeat;
     background-position: center;
   }
@@ -28,14 +28,14 @@
     background-image: url("../../images/profilaktika-media/icon-blockquote-right.svg");
   }
 
-  @media (max-width: 767px) {
-    padding-left: 30px;
-    padding-right: 30px;
+  @media (min-width: 48em) {
+    padding-right: 60px;
+    padding-left: 60px;
 
     &::before,
     &::after {
-      width: 16px;
-      height: 16px;
+      width: 36px;
+      height: 36px;
     }
   }
 }

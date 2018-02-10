@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=500">
     <title>Profilactika Media — Ненапрасно</title>
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="../../public/assets/build/profilaktika-media/style.min.css">
 </head>
-<body>
+<body class="header-fixed">
 
 <?php include "blocks/header.php"; ?>
 <?php include "blocks/offcanvas.php"; ?>

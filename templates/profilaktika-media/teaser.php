@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=500">
     <title>Profilactika Media — Ненапрасно</title>
-    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
     <link rel="stylesheet" href="../../public/assets/build/profilaktika-media/style.min.css">
 </head>
 <body style="background: url('../../public/assets/images/profilaktika-media/background.jpg') repeat center;">

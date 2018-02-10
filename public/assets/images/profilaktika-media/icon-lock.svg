@@ -1,0 +1,20 @@
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="20.7px" height="22.5px" viewBox="0 0 20.7 22.5" style="enable-background:new 0 0 20.7 22.5;"
+	 xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#1D1D1B;stroke-width:2;stroke-miterlimit:10;}
+</style>
+<defs>
+</defs>
+<g>
+	<g>
+		<rect x="1" y="9" class="st0" width="18.7" height="12.5"/>
+		<path class="st0" d="M15.7,8.8V6.4c0-3-2.4-5.4-5.4-5.4S5,3.4,5,6.4v2.4"/>
+	</g>
+	<g>
+		<circle class="st0" cx="10.4" cy="14.2" r="2"/>
+		<line class="st0" x1="10.4" y1="16.3" x2="10.4" y2="19.1"/>
+	</g>
+</g>
+</svg>
