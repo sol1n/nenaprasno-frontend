@@ -60,7 +60,7 @@
 	
 	// Store
 	var formStore = __webpack_require__(151),
-	    Cookies = __webpack_require__(153);
+	    Cookies = __webpack_require__(154);
 	
 	var app = new Vue({
 	    el: "#app",
@@ -21350,7 +21350,7 @@
 	var objectAPI = __webpack_require__(152);
 	
 	// Helpers
-	var fillUserFields = __webpack_require__(154);
+	var fillUserFields = __webpack_require__(153);
 	
 	module.exports = new Vuex.Store({
 	    state: {
@@ -21674,6 +21674,57 @@
 
 /***/ }),
 /* 153 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	function fillUserFields(control, store) {
+	    var sexFieldName = "t1-p1-s1-g1-c1";
+	    var regionFieldName = "reg1";
+	    var ageFieldName = "t1-p3-s2-g1-c1";
+	
+	    if (control.controlId === sexFieldName) {
+	        store.commit('setControlValue', {
+	            id: control.controlId,
+	            value: store.state.userProfile.data.sex
+	        });
+	
+	        console.log("Sex set as: " + control.value);
+	    }
+	    if (control.controlId === regionFieldName) {
+	        if (store.state.userProfile.data.regionId) {
+	            var foundRegion = store.state.regions.find(function (region) {
+	                return region.id === store.state.userProfile.data.regionId;
+	            });
+	            store.commit('setControlValue', {
+	                id: control.controlId,
+	                value: foundRegion ? foundRegion.value : null
+	            });
+	
+	            console.log("Region set as: " + foundRegion.title + " " + foundRegion.value);
+	        }
+	    }
+	
+	    if (control.controlId === ageFieldName) {
+	        var bdate = store.state.userProfile.data.birthdate;
+	        if (bdate) {
+	            var ageDifMs = Date.now() - new Date(bdate).getTime();
+	            var ageDate = new Date(ageDifMs); // miliseconds from epoch;
+	            var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+	            store.commit('setControlValue', {
+	                id: control.controlId,
+	                value: age
+	            });
+	
+	            console.log("Age set as: " + age);
+	        }
+	    }
+	}
+	
+	module.exports = fillUserFields;
+
+/***/ }),
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;'use strict';
@@ -21842,57 +21893,6 @@
 	
 		return init(function () {});
 	});
-
-/***/ }),
-/* 154 */
-/***/ (function(module, exports) {
-
-	"use strict";
-	
-	function fillUserFields(control, store) {
-	    var sexFieldName = "t1-p1-s1-g1-c1";
-	    var regionFieldName = "reg1";
-	    var ageFieldName = "t1-p3-s2-g1-c1";
-	
-	    if (control.controlId === sexFieldName) {
-	        store.commit('setControlValue', {
-	            id: control.controlId,
-	            value: store.state.userProfile.data.sex
-	        });
-	
-	        console.log("Sex set as: " + control.value);
-	    }
-	    if (control.controlId === regionFieldName) {
-	        if (store.state.userProfile.data.regionId) {
-	            var foundRegion = store.state.regions.find(function (region) {
-	                return region.id === store.state.userProfile.data.regionId;
-	            });
-	            store.commit('setControlValue', {
-	                id: control.controlId,
-	                value: foundRegion ? foundRegion.value : null
-	            });
-	
-	            console.log("Region set as: " + foundRegion.title + " " + foundRegion.value);
-	        }
-	    }
-	
-	    if (control.controlId === ageFieldName) {
-	        var bdate = store.state.userProfile.data.birthdate;
-	        if (bdate) {
-	            var ageDifMs = Date.now() - new Date(bdate).getTime();
-	            var ageDate = new Date(ageDifMs); // miliseconds from epoch;
-	            var age = Math.abs(ageDate.getUTCFullYear() - 1970);
-	            store.commit('setControlValue', {
-	                id: control.controlId,
-	                value: age
-	            });
-	
-	            console.log("Age set as: " + age);
-	        }
-	    }
-	}
-	
-	module.exports = fillUserFields;
 
 /***/ })
 /******/ ]);
